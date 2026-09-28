@@ -1,1615 +1,1716 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-  <title>Ice n Spice | North Nazimabad Karachi</title>
-  <meta name="description" content="Ice n Spice — Fast Food, Chinese, Burgers, BBQ and more in North Nazimabad, Karachi.">
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
-
-  <style>
-    :root {
-      --bg: #080808;
-      --bg2: #101010;
-      --card: #151515;
-      --card2: #1b1b1b;
-      --text: #ffffff;
-      --muted: #a7a7a7;
-      --accent: #f4b400;
-      --accent2: #ffcc45;
-      --border: rgba(255,255,255,0.09);
-      --green: #25d366;
-      --max: 1180px;
-    }
-
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
-
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      background: var(--bg);
-      color: var(--text);
-      font-family: "DM Sans", sans-serif;
-      overflow-x: hidden;
-    }
-
-    a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    img {
-      width: 100%;
-      display: block;
-    }
-
-    .container {
-      width: min(92%, var(--max));
-      margin: auto;
-    }
-
-    /* ================= HEADER ================= */
-
-    header {
-      position: fixed;
-      top: 0;
-      left: 0;
-      width: 100%;
-      z-index: 1000;
-      background: rgba(8,8,8,0.88);
-      backdrop-filter: blur(18px);
-      border-bottom: 1px solid var(--border);
-    }
-
-    .nav {
-      min-height: 76px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 25px;
-    }
-
-    .logo {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-    }
-
-    .logo-mark {
-      width: 42px;
-      height: 42px;
-      border-radius: 12px;
-      display: grid;
-      place-items: center;
-      background: linear-gradient(135deg, #f4b400, #ff7a00);
-      color: #111;
-      font-size: 22px;
-      font-weight: 800;
-      box-shadow: 0 8px 30px rgba(244,180,0,.2);
-    }
-
-    .logo-text {
-      line-height: 1;
-    }
-
-    .logo-text strong {
-      display: block;
-      font-family: "Playfair Display", serif;
-      font-size: 20px;
-    }
-
-    .logo-text span {
-      display: block;
-      margin-top: 5px;
-      color: var(--muted);
-      font-size: 10px;
-      letter-spacing: 2px;
-      text-transform: uppercase;
-    }
-
-    nav {
-      display: flex;
-      align-items: center;
-      gap: 28px;
-    }
-
-    nav a {
-      color: #ddd;
-      font-size: 14px;
-      transition: .25s;
-    }
-
-    nav a:hover {
-      color: var(--accent);
-    }
-
-    .nav-btn {
-      padding: 12px 18px;
-      border-radius: 100px;
-      background: var(--accent);
-      color: #111;
-      font-weight: 800;
-      font-size: 13px;
-    }
-
-    /* ================= HERO ================= */
-
-    .hero {
-      min-height: 780px;
-      position: relative;
-      display: flex;
-      align-items: center;
-      overflow: hidden;
-      background:
-        linear-gradient(90deg, rgba(0,0,0,.95) 0%, rgba(0,0,0,.75) 45%, rgba(0,0,0,.35) 100%),
-        url("https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?auto=format&fit=crop&w=1800&q=85")
-        center/cover no-repeat;
-    }
-
-    .hero::after {
-      content: "";
-      position: absolute;
-      inset: auto 0 0;
-      height: 180px;
-      background: linear-gradient(transparent, var(--bg));
-    }
-
-    .hero-content {
-      position: relative;
-      z-index: 2;
-      padding-top: 80px;
-      max-width: 720px;
-    }
-
-    .eyebrow {
-      display: inline-flex;
-      align-items: center;
-      gap: 10px;
-      color: var(--accent);
-      text-transform: uppercase;
-      letter-spacing: 3px;
-      font-size: 11px;
-      font-weight: 800;
-      margin-bottom: 22px;
-    }
-
-    .eyebrow::before {
-      content: "";
-      width: 34px;
-      height: 2px;
-      background: var(--accent);
-    }
-
-    h1 {
-      font-family: "Playfair Display", serif;
-      font-size: clamp(52px, 8vw, 92px);
-      line-height: .95;
-      letter-spacing: -3px;
-    }
-
-    h1 span {
-      color: var(--accent);
-    }
-
-    .hero-description {
-      margin-top: 28px;
-      max-width: 580px;
-      color: #d1d1d1;
-      font-size: 17px;
-      line-height: 1.8;
-    }
-
-    .hero-buttons {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 13px;
-      margin-top: 32px;
-    }
-
-    .btn {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      gap: 9px;
-      padding: 15px 23px;
-      border-radius: 100px;
-      font-weight: 800;
-      font-size: 14px;
-      transition: .25s;
-    }
-
-    .btn-primary {
-      background: var(--accent);
-      color: #111;
-      box-shadow: 0 12px 35px rgba(244,180,0,.18);
-    }
-
-    .btn-primary:hover {
-      transform: translateY(-3px);
-      background: var(--accent2);
-    }
-
-    .btn-outline {
-      border: 1px solid rgba(255,255,255,.2);
-      background: rgba(255,255,255,.05);
-      backdrop-filter: blur(10px);
-    }
-
-    .btn-outline:hover {
-      border-color: var(--accent);
-      color: var(--accent);
-    }
-
-    /* ================= QUICK INFO ================= */
-
-    .quick-info {
-      position: relative;
-      z-index: 5;
-      margin-top: -72px;
-    }
-
-    .info-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      border: 1px solid var(--border);
-      border-radius: 22px;
-      overflow: hidden;
-      background: rgba(20,20,20,.94);
-      backdrop-filter: blur(20px);
-      box-shadow: 0 20px 70px rgba(0,0,0,.35);
-    }
-
-    .info-box {
-      padding: 28px;
-      display: flex;
-      align-items: center;
-      gap: 17px;
-      border-right: 1px solid var(--border);
-    }
-
-    .info-box:last-child {
-      border-right: 0;
-    }
-
-    .info-icon {
-      min-width: 48px;
-      height: 48px;
-      border-radius: 14px;
-      display: grid;
-      place-items: center;
-      background: rgba(244,180,0,.1);
-      border: 1px solid rgba(244,180,0,.2);
-      font-size: 21px;
-    }
-
-    .info-box small {
-      display: block;
-      color: #858585;
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
-      margin-bottom: 5px;
-    }
-
-    .info-box strong {
-      font-size: 14px;
-    }
-
-    /* ================= SECTIONS ================= */
-
-    section {
-      padding: 110px 0;
-    }
-
-    .section-head {
-      max-width: 700px;
-      margin-bottom: 50px;
-    }
-
-    .section-label {
-      color: var(--accent);
-      text-transform: uppercase;
-      letter-spacing: 3px;
-      font-size: 11px;
-      font-weight: 800;
-      margin-bottom: 12px;
-    }
-
-    .section-title {
-      font-family: "Playfair Display", serif;
-      font-size: clamp(38px, 5vw, 58px);
-      line-height: 1.05;
-    }
-
-    .section-description {
-      color: var(--muted);
-      line-height: 1.8;
-      margin-top: 17px;
-    }
-
-    /* ================= ABOUT ================= */
-
-    .about-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 65px;
-      align-items: center;
-    }
-
-    .about-image {
-      min-height: 550px;
-      border-radius: 28px;
-      overflow: hidden;
-      position: relative;
-      background:
-        linear-gradient(180deg, transparent 40%, rgba(0,0,0,.8)),
-        url("https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=1100&q=85")
-        center/cover;
-    }
-
-    .about-badge {
-      position: absolute;
-      bottom: 25px;
-      left: 25px;
-      right: 25px;
-      padding: 20px;
-      border-radius: 18px;
-      background: rgba(10,10,10,.82);
-      border: 1px solid rgba(255,255,255,.12);
-      backdrop-filter: blur(15px);
-    }
-
-    .about-badge strong {
-      font-family: "Playfair Display", serif;
-      font-size: 23px;
-    }
-
-    .about-badge p {
-      color: #aaa;
-      font-size: 13px;
-      margin-top: 5px;
-    }
-
-    .about-copy p {
-      color: #aaa;
-      line-height: 1.9;
-      margin-bottom: 20px;
-    }
-
-    .feature-list {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 15px;
-      margin-top: 28px;
-    }
-
-    .feature {
-      padding: 17px;
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 15px;
-    }
-
-    .feature strong {
-      display: block;
-      font-size: 14px;
-    }
-
-    .feature span {
-      color: #858585;
-      font-size: 12px;
-      display: block;
-      margin-top: 5px;
-    }
-
-    /* ================= MENU ================= */
-
-    .menu-section {
-      background: #0c0c0c;
-      border-top: 1px solid var(--border);
-      border-bottom: 1px solid var(--border);
-    }
-
-    .menu-tabs {
-      display: flex;
-      gap: 10px;
-      flex-wrap: wrap;
-      margin-bottom: 32px;
-    }
-
-    .menu-tab {
-      padding: 11px 18px;
-      border: 1px solid var(--border);
-      border-radius: 100px;
-      color: #aaa;
-      font-size: 13px;
-    }
-
-    .menu-tab.active {
-      background: var(--accent);
-      color: #111;
-      border-color: var(--accent);
-      font-weight: 800;
-    }
-
-    .menu-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-    }
-
-    .menu-card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 20px;
-      overflow: hidden;
-      transition: .3s;
-    }
-
-    .menu-card:hover {
-      transform: translateY(-7px);
-      border-color: rgba(244,180,0,.4);
-      box-shadow: 0 20px 45px rgba(0,0,0,.3);
-    }
-
-    .menu-image {
-      height: 210px;
-      overflow: hidden;
-    }
-
-    .menu-image img {
-      height: 100%;
-      object-fit: cover;
-      transition: .5s;
-    }
-
-    .menu-card:hover .menu-image img {
-      transform: scale(1.06);
-    }
-
-    .menu-content {
-      padding: 21px;
-    }
-
-    .menu-tag {
-      color: var(--accent);
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
-      font-size: 9px;
-      font-weight: 800;
-    }
-
-    .menu-content h3 {
-      font-family: "Playfair Display", serif;
-      font-size: 23px;
-      margin-top: 7px;
-    }
-
-    .menu-content p {
-      color: #858585;
-      line-height: 1.6;
-      font-size: 12px;
-      margin-top: 8px;
-      min-height: 39px;
-    }
-
-    .menu-bottom {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      margin-top: 17px;
-      padding-top: 15px;
-      border-top: 1px solid var(--border);
-    }
-
-    .price {
-      color: var(--accent);
-      font-weight: 800;
-      font-size: 15px;
-    }
-
-    .order-mini {
-      width: 36px;
-      height: 36px;
-      border-radius: 50%;
-      display: grid;
-      place-items: center;
-      background: var(--accent);
-      color: #111;
-      font-weight: 900;
-    }
-
-    /* ================= FEATURE BANNER ================= */
-
-    .feature-banner {
-      padding: 0 0 110px;
-    }
-
-    .banner {
-      min-height: 350px;
-      border-radius: 28px;
-      padding: 55px;
-      display: flex;
-      align-items: center;
-      position: relative;
-      overflow: hidden;
-      background:
-        linear-gradient(90deg, rgba(0,0,0,.94), rgba(0,0,0,.55)),
-        url("https://images.unsplash.com/photo-1563379926898-05f4575a45d8?auto=format&fit=crop&w=1600&q=85")
-        center/cover;
-      border: 1px solid var(--border);
-    }
-
-    .banner-content {
-      max-width: 600px;
-      position: relative;
-      z-index: 2;
-    }
-
-    .banner h2 {
-      font-family: "Playfair Display", serif;
-      font-size: clamp(36px, 5vw, 57px);
-      line-height: 1.05;
-    }
-
-    .banner p {
-      color: #ccc;
-      margin-top: 15px;
-      line-height: 1.7;
-    }
-
-    /* ================= SPECIALS ================= */
-
-    .special-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 18px;
-    }
-
-    .special-card {
-      padding: 30px;
-      min-height: 250px;
-      border-radius: 22px;
-      background: linear-gradient(145deg, #191919, #101010);
-      border: 1px solid var(--border);
-      position: relative;
-      overflow: hidden;
-    }
-
-    .special-card::before {
-      content: "";
-      position: absolute;
-      width: 150px;
-      height: 150px;
-      border-radius: 50%;
-      background: rgba(244,180,0,.08);
-      top: -60px;
-      right: -60px;
-    }
-
-    .special-number {
-      color: var(--accent);
-      font-size: 12px;
-      font-weight: 800;
-      letter-spacing: 2px;
-    }
-
-    .special-card h3 {
-      font-family: "Playfair Display", serif;
-      font-size: 28px;
-      margin-top: 17px;
-    }
-
-    .special-card p {
-      color: #858585;
-      line-height: 1.7;
-      margin-top: 12px;
-      font-size: 13px;
-    }
-
-    /* ================= LOCATION ================= */
-
-    .location {
-      background: #0c0c0c;
-      border-top: 1px solid var(--border);
-    }
-
-    .location-grid {
-      display: grid;
-      grid-template-columns: .9fr 1.1fr;
-      gap: 25px;
-    }
-
-    .contact-card {
-      background: var(--card);
-      border: 1px solid var(--border);
-      border-radius: 24px;
-      padding: 35px;
-    }
-
-    .contact-item {
-      padding: 20px 0;
-      border-bottom: 1px solid var(--border);
-    }
-
-    .contact-item:last-child {
-      border-bottom: 0;
-    }
-
-    .contact-item small {
-      display: block;
-      color: #777;
-      text-transform: uppercase;
-      letter-spacing: 1.5px;
-      font-size: 10px;
-      margin-bottom: 8px;
-    }
-
-    .contact-item strong {
-      font-size: 15px;
-      line-height: 1.6;
-    }
-
-    .map-box {
-      min-height: 430px;
-      border-radius: 24px;
-      border: 1px solid var(--border);
-      overflow: hidden;
-      background:
-        linear-gradient(rgba(0,0,0,.25), rgba(0,0,0,.45)),
-        url("https://images.unsplash.com/photo-1523731407965-2430cd12f5e4?auto=format&fit=crop&w=1300&q=85")
-        center/cover;
-      display: flex;
-      align-items: flex-end;
-      padding: 25px;
-    }
-
-    .map-overlay {
-      width: 100%;
-      padding: 22px;
-      border-radius: 18px;
-      background: rgba(8,8,8,.85);
-      backdrop-filter: blur(15px);
-      border: 1px solid rgba(255,255,255,.1);
-    }
-
-    .map-overlay strong {
-      display: block;
-      font-family: "Playfair Display", serif;
-      font-size: 22px;
-    }
-
-    .map-overlay span {
-      display: block;
-      color: #999;
-      font-size: 12px;
-      margin-top: 5px;
-    }
-
-    /* ================= CTA ================= */
-
-    .cta {
-      text-align: center;
-      padding: 120px 0;
-      position: relative;
-      overflow: hidden;
-    }
-
-    .cta::before {
-      content: "";
-      position: absolute;
-      width: 500px;
-      height: 500px;
-      border-radius: 50%;
-      background: rgba(244,180,0,.07);
-      filter: blur(20px);
-      left: 50%;
-      top: 20%;
-      transform: translateX(-50%);
-    }
-
-    .cta-content {
-      position: relative;
-      z-index: 2;
-    }
-
-    .cta h2 {
-      font-family: "Playfair Display", serif;
-      font-size: clamp(42px, 6vw, 68px);
-      line-height: 1;
-    }
-
-    .cta p {
-      color: #999;
-      max-width: 550px;
-      margin: 20px auto 30px;
-      line-height: 1.8;
-    }
-
-    /* ================= FOOTER ================= */
-
-    footer {
-      padding: 35px 0;
-      border-top: 1px solid var(--border);
-      background: #060606;
-    }
-
-    .footer-inner {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 20px;
-    }
-
-    .footer-copy {
-      color: #666;
-      font-size: 12px;
-    }
-
-    .footer-brand {
-      font-family: "Playfair Display", serif;
-      font-size: 18px;
-    }
-
-    /* ================= FLOATING WHATSAPP ================= */
-
-    .whatsapp {
-      position: fixed;
-      right: 22px;
-      bottom: 22px;
-      z-index: 2000;
-      width: 58px;
-      height: 58px;
-      border-radius: 50%;
-      display: grid;
-      place-items: center;
-      background: var(--green);
-      color: #fff;
-      font-size: 26px;
-      box-shadow: 0 10px 35px rgba(37,211,102,.28);
-      transition: .25s;
-    }
-
-    .whatsapp:hover {
-      transform: scale(1.08);
-    }
-
-    /* ================= RESPONSIVE ================= */
-
-    @media (max-width: 900px) {
-
-      nav {
-        display: none;
-      }
-
-      .hero {
-        min-height: 700px;
-      }
-
-      .info-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .info-box {
-        border-right: 0;
-        border-bottom: 1px solid var(--border);
-      }
-
-      .info-box:last-child {
-        border-bottom: 0;
-      }
-
-      .about-grid,
-      .location-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .about-image {
-        min-height: 430px;
-      }
-
-      .menu-grid {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .special-grid {
-        grid-template-columns: 1fr;
-      }
-    }
-
-    @media (max-width: 600px) {
-
-      .nav {
-        min-height: 68px;
-      }
-
-      .logo-mark {
-        width: 38px;
-        height: 38px;
-      }
-
-      .logo-text strong {
-        font-size: 17px;
-      }
-
-      .hero {
-        min-height: 670px;
-        background-position: 65% center;
-      }
-
-      .hero-content {
-        padding-top: 70px;
-      }
-
-      h1 {
-        font-size: 54px;
-        letter-spacing: -2px;
-      }
-
-      .hero-description {
-        font-size: 14px;
-        line-height: 1.7;
-      }
-
-      .hero-buttons {
-        flex-direction: column;
-      }
-
-      .btn {
-        width: 100%;
-      }
-
-      section {
-        padding: 80px 0;
-      }
-
-      .quick-info {
-        margin-top: -45px;
-      }
-
-      .info-box {
-        padding: 20px;
-      }
-
-      .about-image {
-        min-height: 350px;
-      }
-
-      .feature-list {
-        grid-template-columns: 1fr;
-      }
-
-      .menu-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .menu-image {
-        height: 230px;
-      }
-
-      .banner {
-        padding: 35px 25px;
-        min-height: 400px;
-      }
-
-      .location-grid {
-        gap: 18px;
-      }
-
-      .contact-card {
-        padding: 25px;
-      }
-
-      .map-box {
-        min-height: 350px;
-      }
-
-      .footer-inner {
-        flex-direction: column;
-        text-align: center;
-      }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Ice n Spice | North Nazimabad Karachi</title>
+
+<meta name="description" content="Ice n Spice Karachi — Burgers, Zinger, Chinese, Arabic Wraps, BBQ, Platters, Broast and more.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+
+<style>
+
+:root{
+  --bg:#070707;
+  --bg2:#0d0d0d;
+  --card:#121212;
+  --card2:#181818;
+  --gold:#ffc400;
+  --gold2:#ffdb55;
+  --white:#fff;
+  --muted:#9d9d9d;
+  --border:rgba(255,255,255,.09);
+  --green:#25d366;
+  --max:1200px;
+}
+
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+html{
+  scroll-behavior:smooth;
+}
+
+body{
+  background:var(--bg);
+  color:var(--white);
+  font-family:"DM Sans",sans-serif;
+  overflow-x:hidden;
+}
+
+a{
+  color:inherit;
+  text-decoration:none;
+}
+
+button{
+  font-family:inherit;
+}
+
+.container{
+  width:min(92%,var(--max));
+  margin:auto;
+}
+
+/* ================= SCROLLBAR ================= */
+
+::-webkit-scrollbar{
+  width:8px;
+}
+
+::-webkit-scrollbar-track{
+  background:#050505;
+}
+
+::-webkit-scrollbar-thumb{
+  background:#3d3d3d;
+  border-radius:20px;
+}
+
+::-webkit-scrollbar-thumb:hover{
+  background:var(--gold);
+}
+
+/* ================= HEADER ================= */
+
+header{
+  position:fixed;
+  top:0;
+  left:0;
+  right:0;
+  z-index:1000;
+  background:rgba(5,5,5,.86);
+  backdrop-filter:blur(18px);
+  border-bottom:1px solid var(--border);
+}
+
+.nav{
+  height:78px;
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+}
+
+.logo{
+  display:flex;
+  align-items:center;
+  gap:12px;
+}
+
+.logo-mark{
+  width:44px;
+  height:44px;
+  border-radius:13px;
+  display:grid;
+  place-items:center;
+  color:#111;
+  font-weight:900;
+  font-size:23px;
+  background:linear-gradient(135deg,#ffe066,#ffb000);
+  box-shadow:0 8px 35px rgba(255,196,0,.18);
+}
+
+.logo-text strong{
+  display:block;
+  font-family:"Playfair Display",serif;
+  font-size:21px;
+  line-height:1;
+}
+
+.logo-text span{
+  display:block;
+  color:#777;
+  font-size:9px;
+  letter-spacing:2px;
+  text-transform:uppercase;
+  margin-top:6px;
+}
+
+.nav-links{
+  display:flex;
+  gap:28px;
+  align-items:center;
+}
+
+.nav-links a{
+  color:#ccc;
+  font-size:13px;
+  transition:.25s;
+}
+
+.nav-links a:hover{
+  color:var(--gold);
+}
+
+.nav-order{
+  padding:12px 19px;
+  border-radius:100px;
+  background:var(--gold);
+  color:#111!important;
+  font-weight:800;
+}
+
+/* ================= HERO ================= */
+
+.hero{
+  min-height:820px;
+  position:relative;
+  display:flex;
+  align-items:center;
+  overflow:hidden;
+
+  background:
+    linear-gradient(
+      90deg,
+      rgba(0,0,0,.96) 0%,
+      rgba(0,0,0,.83) 38%,
+      rgba(0,0,0,.40) 100%
+    ),
+    url("https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?auto=format&fit=crop&w=1900&q=90")
+    center/cover no-repeat;
+}
+
+.hero:before{
+  content:"";
+  position:absolute;
+  inset:0;
+  background:
+    radial-gradient(circle at 75% 40%,rgba(255,196,0,.11),transparent 30%);
+}
+
+.hero:after{
+  content:"";
+  position:absolute;
+  bottom:0;
+  left:0;
+  right:0;
+  height:180px;
+  background:linear-gradient(transparent,var(--bg));
+}
+
+.hero-content{
+  position:relative;
+  z-index:2;
+  max-width:760px;
+  padding-top:90px;
+}
+
+.kicker{
+  color:var(--gold);
+  text-transform:uppercase;
+  letter-spacing:4px;
+  font-size:11px;
+  font-weight:800;
+  margin-bottom:20px;
+}
+
+.hero h1{
+  font-family:"Playfair Display",serif;
+  font-size:clamp(55px,8vw,94px);
+  line-height:.94;
+  letter-spacing:-4px;
+}
+
+.hero h1 span{
+  color:var(--gold);
+}
+
+.hero p{
+  color:#c5c5c5;
+  max-width:620px;
+  line-height:1.8;
+  font-size:16px;
+  margin-top:28px;
+}
+
+.hero-buttons{
+  display:flex;
+  gap:12px;
+  flex-wrap:wrap;
+  margin-top:32px;
+}
+
+.btn{
+  display:inline-flex;
+  align-items:center;
+  justify-content:center;
+  gap:9px;
+  padding:15px 24px;
+  border-radius:100px;
+  font-size:13px;
+  font-weight:800;
+  transition:.25s;
+}
+
+.btn-gold{
+  background:var(--gold);
+  color:#111;
+  box-shadow:0 12px 35px rgba(255,196,0,.17);
+}
+
+.btn-gold:hover{
+  transform:translateY(-3px);
+  background:var(--gold2);
+}
+
+.btn-dark{
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.16);
+  backdrop-filter:blur(12px);
+}
+
+.btn-dark:hover{
+  border-color:var(--gold);
+  color:var(--gold);
+}
+
+/* ================= FLOATING INFO ================= */
+
+.quick{
+  position:relative;
+  z-index:10;
+  margin-top:-70px;
+}
+
+.quick-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  background:rgba(18,18,18,.95);
+  border:1px solid var(--border);
+  border-radius:23px;
+  overflow:hidden;
+  box-shadow:0 25px 80px rgba(0,0,0,.4);
+  backdrop-filter:blur(20px);
+}
+
+.quick-item{
+  padding:27px;
+  display:flex;
+  align-items:center;
+  gap:16px;
+  border-right:1px solid var(--border);
+}
+
+.quick-item:last-child{
+  border-right:0;
+}
+
+.quick-icon{
+  width:48px;
+  height:48px;
+  border-radius:14px;
+  background:rgba(255,196,0,.09);
+  border:1px solid rgba(255,196,0,.2);
+  display:grid;
+  place-items:center;
+  font-size:21px;
+}
+
+.quick-item small{
+  display:block;
+  color:#777;
+  text-transform:uppercase;
+  font-size:9px;
+  letter-spacing:1.7px;
+  margin-bottom:6px;
+}
+
+.quick-item strong{
+  font-size:13px;
+}
+
+/* ================= GENERAL ================= */
+
+section{
+  padding:110px 0;
+}
+
+.section-label{
+  color:var(--gold);
+  font-size:10px;
+  text-transform:uppercase;
+  letter-spacing:3px;
+  font-weight:800;
+  margin-bottom:13px;
+}
+
+.section-title{
+  font-family:"Playfair Display",serif;
+  font-size:clamp(39px,5vw,61px);
+  line-height:1.02;
+}
+
+.section-text{
+  color:var(--muted);
+  line-height:1.8;
+  max-width:670px;
+  margin-top:17px;
+}
+
+.section-head{
+  margin-bottom:50px;
+}
+
+/* ================= ABOUT ================= */
+
+.about-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:65px;
+  align-items:center;
+}
+
+.about-image{
+  height:570px;
+  border-radius:28px;
+  overflow:hidden;
+  position:relative;
+
+  background:
+    linear-gradient(180deg,transparent 35%,rgba(0,0,0,.9)),
+    url("https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=1200&q=90")
+    center/cover;
+}
+
+.about-card{
+  position:absolute;
+  bottom:25px;
+  left:25px;
+  right:25px;
+  padding:22px;
+  border-radius:18px;
+  background:rgba(8,8,8,.82);
+  backdrop-filter:blur(15px);
+  border:1px solid rgba(255,255,255,.1);
+}
+
+.about-card strong{
+  font-family:"Playfair Display",serif;
+  font-size:24px;
+}
+
+.about-card p{
+  color:#999;
+  font-size:12px;
+  margin-top:6px;
+}
+
+.about-copy p{
+  color:#999;
+  line-height:1.9;
+  margin-bottom:18px;
+}
+
+.about-features{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:13px;
+  margin-top:28px;
+}
+
+.about-feature{
+  padding:18px;
+  border-radius:16px;
+  background:var(--card);
+  border:1px solid var(--border);
+}
+
+.about-feature b{
+  display:block;
+  font-size:13px;
+}
+
+.about-feature span{
+  color:#777;
+  font-size:11px;
+  display:block;
+  margin-top:5px;
+}
+
+/* ================= FEATURED ================= */
+
+.featured{
+  background:#0b0b0b;
+  border-top:1px solid var(--border);
+  border-bottom:1px solid var(--border);
+}
+
+.feature-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:18px;
+}
+
+.feature-card{
+  position:relative;
+  height:390px;
+  border-radius:24px;
+  overflow:hidden;
+  border:1px solid var(--border);
+  background:#111;
+}
+
+.feature-card img{
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  transition:.6s;
+}
+
+.feature-card:hover img{
+  transform:scale(1.07);
+}
+
+.feature-overlay{
+  position:absolute;
+  inset:0;
+  display:flex;
+  flex-direction:column;
+  justify-content:flex-end;
+  padding:25px;
+  background:linear-gradient(transparent 30%,rgba(0,0,0,.95));
+}
+
+.feature-overlay span{
+  color:var(--gold);
+  font-size:9px;
+  text-transform:uppercase;
+  letter-spacing:2px;
+  font-weight:800;
+}
+
+.feature-overlay h3{
+  font-family:"Playfair Display",serif;
+  font-size:29px;
+  margin-top:6px;
+}
+
+.feature-overlay p{
+  color:#aaa;
+  font-size:11px;
+  line-height:1.6;
+  margin-top:7px;
+}
+
+/* ================= MENU ================= */
+
+.menu-section{
+  background:var(--bg);
+}
+
+.menu-toolbar{
+  display:flex;
+  gap:10px;
+  flex-wrap:wrap;
+  align-items:center;
+  justify-content:space-between;
+  margin-bottom:28px;
+}
+
+.categories{
+  display:flex;
+  gap:8px;
+  flex-wrap:wrap;
+}
+
+.cat-btn{
+  border:1px solid var(--border);
+  background:#111;
+  color:#aaa;
+  border-radius:100px;
+  padding:11px 16px;
+  font-size:11px;
+  cursor:pointer;
+  transition:.25s;
+}
+
+.cat-btn:hover{
+  color:#fff;
+  border-color:rgba(255,196,0,.4);
+}
+
+.cat-btn.active{
+  background:var(--gold);
+  color:#111;
+  border-color:var(--gold);
+  font-weight:800;
+}
+
+.search-box{
+  width:230px;
+}
+
+.search-box input{
+  width:100%;
+  background:#111;
+  color:#fff;
+  border:1px solid var(--border);
+  border-radius:100px;
+  padding:12px 17px;
+  outline:none;
+  font-size:12px;
+}
+
+.search-box input:focus{
+  border-color:var(--gold);
+}
+
+.menu-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  gap:14px;
+}
+
+.menu-card{
+  background:linear-gradient(145deg,#171717,#101010);
+  border:1px solid var(--border);
+  border-radius:19px;
+  padding:20px;
+  transition:.25s;
+}
+
+.menu-card:hover{
+  transform:translateY(-4px);
+  border-color:rgba(255,196,0,.35);
+  box-shadow:0 18px 50px rgba(0,0,0,.3);
+}
+
+.menu-top{
+  display:flex;
+  justify-content:space-between;
+  gap:15px;
+}
+
+.menu-name{
+  font-family:"Playfair Display",serif;
+  font-size:20px;
+  line-height:1.1;
+}
+
+.menu-price{
+  color:var(--gold);
+  font-size:13px;
+  font-weight:800;
+  white-space:nowrap;
+}
+
+.menu-category{
+  display:inline-block;
+  color:#777;
+  font-size:8px;
+  text-transform:uppercase;
+  letter-spacing:1.7px;
+  margin-top:9px;
+}
+
+.menu-description{
+  color:#777;
+  font-size:11px;
+  line-height:1.6;
+  margin-top:10px;
+  min-height:35px;
+}
+
+.order-item{
+  display:inline-flex;
+  margin-top:15px;
+  padding:9px 13px;
+  border-radius:100px;
+  background:rgba(255,196,0,.09);
+  border:1px solid rgba(255,196,0,.16);
+  color:var(--gold);
+  font-size:10px;
+  font-weight:800;
+  transition:.2s;
+}
+
+.order-item:hover{
+  background:var(--gold);
+  color:#111;
+}
+
+.no-results{
+  display:none;
+  text-align:center;
+  padding:60px;
+  color:#777;
+}
+
+/* ================= PLATTER FEATURE ================= */
+
+.platter-section{
+  background:
+    radial-gradient(circle at 10% 50%,rgba(255,196,0,.07),transparent 30%),
+    #0b0b0b;
+  border-top:1px solid var(--border);
+  border-bottom:1px solid var(--border);
+}
+
+.platter-grid{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:25px;
+}
+
+.platter-main{
+  min-height:500px;
+  border-radius:28px;
+  overflow:hidden;
+  position:relative;
+  background:
+    linear-gradient(180deg,transparent 20%,rgba(0,0,0,.95)),
+    url("https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=1300&q=90")
+    center/cover;
+}
+
+.platter-content{
+  position:absolute;
+  bottom:0;
+  left:0;
+  right:0;
+  padding:35px;
+}
+
+.platter-content .price{
+  color:var(--gold);
+  font-weight:900;
+  font-size:14px;
+}
+
+.platter-content h3{
+  font-family:"Playfair Display",serif;
+  font-size:43px;
+  margin-top:7px;
+}
+
+.platter-content p{
+  color:#aaa;
+  line-height:1.7;
+  font-size:12px;
+  margin-top:8px;
+}
+
+.platter-list{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  gap:13px;
+}
+
+.platter-small{
+  padding:24px;
+  background:#121212;
+  border:1px solid var(--border);
+  border-radius:19px;
+}
+
+.platter-small span{
+  color:var(--gold);
+  font-size:9px;
+  text-transform:uppercase;
+  letter-spacing:2px;
+}
+
+.platter-small h4{
+  font-family:"Playfair Display",serif;
+  font-size:22px;
+  margin-top:8px;
+}
+
+.platter-small strong{
+  display:block;
+  color:var(--gold);
+  margin-top:11px;
+  font-size:13px;
+}
+
+/* ================= CONTACT ================= */
+
+.contact{
+  background:#080808;
+}
+
+.contact-grid{
+  display:grid;
+  grid-template-columns:.9fr 1.1fr;
+  gap:20px;
+}
+
+.contact-card{
+  padding:35px;
+  background:#121212;
+  border:1px solid var(--border);
+  border-radius:24px;
+}
+
+.contact-line{
+  padding:20px 0;
+  border-bottom:1px solid var(--border);
+}
+
+.contact-line:last-child{
+  border-bottom:0;
+}
+
+.contact-line small{
+  display:block;
+  color:#777;
+  font-size:9px;
+  text-transform:uppercase;
+  letter-spacing:2px;
+  margin-bottom:7px;
+}
+
+.contact-line strong{
+  font-size:14px;
+  line-height:1.7;
+}
+
+.phone-list{
+  display:flex;
+  flex-wrap:wrap;
+  gap:7px;
+  margin-top:9px;
+}
+
+.phone{
+  display:inline-block;
+  padding:8px 11px;
+  background:#1b1b1b;
+  border:1px solid var(--border);
+  border-radius:9px;
+  font-size:11px;
+}
+
+.map{
+  min-height:450px;
+  border-radius:24px;
+  overflow:hidden;
+  border:1px solid var(--border);
+  position:relative;
+
+  background:
+    linear-gradient(rgba(0,0,0,.28),rgba(0,0,0,.65)),
+    url("https://images.unsplash.com/photo-1523731407965-2430cd12f5e4?auto=format&fit=crop&w=1400&q=90")
+    center/cover;
+}
+
+.map-card{
+  position:absolute;
+  bottom:22px;
+  left:22px;
+  right:22px;
+  padding:22px;
+  border-radius:18px;
+  background:rgba(7,7,7,.88);
+  backdrop-filter:blur(15px);
+  border:1px solid rgba(255,255,255,.1);
+}
+
+.map-card h3{
+  font-family:"Playfair Display",serif;
+  font-size:25px;
+}
+
+.map-card p{
+  color:#888;
+  font-size:11px;
+  line-height:1.6;
+  margin-top:6px;
+}
+
+/* ================= CTA ================= */
+
+.cta{
+  text-align:center;
+  padding:130px 0;
+  position:relative;
+  overflow:hidden;
+}
+
+.cta:before{
+  content:"";
+  position:absolute;
+  width:550px;
+  height:550px;
+  border-radius:50%;
+  background:rgba(255,196,0,.07);
+  filter:blur(30px);
+  left:50%;
+  top:10%;
+  transform:translateX(-50%);
+}
+
+.cta-content{
+  position:relative;
+  z-index:2;
+}
+
+.cta h2{
+  font-family:"Playfair Display",serif;
+  font-size:clamp(44px,6vw,70px);
+  line-height:1;
+}
+
+.cta p{
+  color:#888;
+  max-width:550px;
+  margin:20px auto 28px;
+  line-height:1.8;
+}
+
+/* ================= FOOTER ================= */
+
+footer{
+  border-top:1px solid var(--border);
+  background:#050505;
+  padding:35px 0;
+}
+
+.footer{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:20px;
+}
+
+.footer-brand{
+  font-family:"Playfair Display",serif;
+  font-size:20px;
+}
+
+.footer-text{
+  color:#666;
+  font-size:10px;
+  line-height:1.7;
+}
+
+.instagram{
+  color:var(--gold);
+  font-size:11px;
+}
+
+/* ================= WHATSAPP ================= */
+
+.whatsapp{
+  position:fixed;
+  right:20px;
+  bottom:20px;
+  z-index:2000;
+  width:60px;
+  height:60px;
+  border-radius:50%;
+  display:grid;
+  place-items:center;
+  background:var(--green);
+  color:#fff;
+  font-size:27px;
+  box-shadow:0 12px 40px rgba(37,211,102,.28);
+  transition:.25s;
+}
+
+.whatsapp:hover{
+  transform:scale(1.08);
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media(max-width:950px){
+
+  .nav-links{
+    display:none;
+  }
+
+  .hero{
+    min-height:720px;
+  }
+
+  .quick-grid{
+    grid-template-columns:1fr;
+  }
+
+  .quick-item{
+    border-right:0;
+    border-bottom:1px solid var(--border);
+  }
+
+  .quick-item:last-child{
+    border-bottom:0;
+  }
+
+  .about-grid,
+  .platter-grid,
+  .contact-grid{
+    grid-template-columns:1fr;
+  }
+
+  .feature-grid{
+    grid-template-columns:1fr 1fr;
+  }
+
+  .menu-grid{
+    grid-template-columns:1fr 1fr;
+  }
+
+}
+
+@media(max-width:600px){
+
+  .nav{
+    height:70px;
+  }
+
+  .logo-mark{
+    width:39px;
+    height:39px;
+    font-size:20px;
+  }
+
+  .logo-text strong{
+    font-size:17px;
+  }
+
+  .nav-order{
+    padding:10px 14px;
+    font-size:10px;
+  }
+
+  .hero{
+    min-height:700px;
+    background-position:63% center;
+  }
+
+  .hero-content{
+    padding-top:70px;
+  }
+
+  .hero h1{
+    font-size:54px;
+    letter-spacing:-2.5px;
+  }
+
+  .hero p{
+    font-size:13px;
+  }
+
+  .hero-buttons{
+    flex-direction:column;
+  }
+
+  .btn{
+    width:100%;
+  }
+
+  section{
+    padding:80px 0;
+  }
+
+  .quick{
+    margin-top:-45px;
+  }
+
+  .quick-item{
+    padding:20px;
+  }
+
+  .about-image{
+    height:390px;
+  }
+
+  .about-features{
+    grid-template-columns:1fr;
+  }
+
+  .feature-grid{
+    grid-template-columns:1fr;
+  }
+
+  .feature-card{
+    height:330px;
+  }
+
+  .menu-toolbar{
+    align-items:stretch;
+  }
+
+  .categories{
+    width:100%;
+    overflow-x:auto;
+    flex-wrap:nowrap;
+    padding-bottom:5px;
+  }
+
+  .cat-btn{
+    white-space:nowrap;
+  }
+
+  .search-box{
+    width:100%;
+  }
+
+  .menu-grid{
+    grid-template-columns:1fr;
+  }
+
+  .platter-list{
+    grid-template-columns:1fr;
+  }
+
+  .platter-main{
+    min-height:430px;
+  }
+
+  .contact-card{
+    padding:25px;
+  }
+
+  .map{
+    min-height:360px;
+  }
+
+  .footer{
+    flex-direction:column;
+    text-align:center;
+  }
+
+}
+
+</style>
 </head>
 
 <body>
 
-  <!-- ================= HEADER ================= -->
+<!-- ================= HEADER ================= -->
 
-  <header>
-    <div class="container nav">
+<header>
 
-      <a href="#home" class="logo">
-        <div class="logo-mark">I</div>
+  <div class="container nav">
 
-        <div class="logo-text">
-          <strong>Ice n Spice</strong>
-          <span>Restaurant · Karachi</span>
-        </div>
-      </a>
+    <a href="#home" class="logo">
 
-      <nav>
-        <a href="#home">Home</a>
-        <a href="#about">About</a>
-        <a href="#menu">Menu</a>
-        <a href="#specials">Specials</a>
-        <a href="#location">Location</a>
-      </nav>
+      <div class="logo-mark">I</div>
 
-      <a class="nav-btn" href="https://wa.me/923216638470?text=Hello%20Ice%20n%20Spice%2C%20I%20would%20like%20to%20place%20an%20order." target="_blank">
-        Order Now
-      </a>
-
-    </div>
-  </header>
-
-
-  <!-- ================= HERO ================= -->
-
-  <main id="home">
-
-    <section class="hero">
-
-      <div class="container">
-
-        <div class="hero-content">
-
-          <div class="eyebrow">
-            North Nazimabad · Karachi
-          </div>
-
-          <h1>
-            Taste That<br>
-            <span>Brings You Back.</span>
-          </h1>
-
-          <p class="hero-description">
-            From signature burgers and crispy broast to Chinese favourites,
-            BBQ, rolls and more — discover a menu made for every craving.
-          </p>
-
-          <div class="hero-buttons">
-
-            <a class="btn btn-primary"
-               href="https://wa.me/923216638470?text=Hello%20Ice%20n%20Spice%2C%20I%20would%20like%20to%20place%20an%20order."
-               target="_blank">
-              💬 Order on WhatsApp
-            </a>
-
-            <a class="btn btn-outline" href="#menu">
-              Explore Menu ↓
-            </a>
-
-          </div>
-
-        </div>
-
+      <div class="logo-text">
+        <strong>Ice n Spice</strong>
+        <span>Restaurant · Karachi</span>
       </div>
 
-    </section>
+    </a>
+
+    <nav class="nav-links">
+      <a href="#home">Home</a>
+      <a href="#about">About</a>
+      <a href="#menu">Menu</a>
+      <a href="#platters">Platters</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <a
+      class="nav-order"
+      href="https://wa.me/923216638470?text=Hello%20Ice%20n%20Spice%2C%20I%20would%20like%20to%20place%20an%20order."
+      target="_blank">
+      Order Now
+    </a>
+
+  </div>
+
+</header>
 
 
-    <!-- ================= QUICK INFO ================= -->
+<!-- ================= HERO ================= -->
 
-    <div class="container quick-info">
+<main id="home">
 
-      <div class="info-grid">
+<section class="hero">
 
-        <div class="info-box">
-          <div class="info-icon">📍</div>
+  <div class="container">
 
-          <div>
-            <small>Visit Us</small>
-            <strong>Block A, North Nazimabad</strong>
-          </div>
-        </div>
+    <div class="hero-content">
 
-        <div class="info-box">
-          <div class="info-icon">📞</div>
+      <div class="kicker">
+        North Nazimabad · Karachi
+      </div>
 
-          <div>
-            <small>Call / WhatsApp</small>
-            <strong>0321 6638470</strong>
-          </div>
-        </div>
+      <h1>
+        Taste.<br>
+        <span>Experience.</span><br>
+        Repeat.
+      </h1>
 
-        <div class="info-box">
-          <div class="info-icon">🍽️</div>
+      <p>
+        From signature Zingers and gourmet burgers to authentic Chinese,
+        Arabic wraps, BBQ and loaded platters — discover the complete
+        Ice n Spice experience.
+      </p>
 
-          <div>
-            <small>Available</small>
-            <strong>Dine-in · Takeaway · Delivery</strong>
-          </div>
-        </div>
+      <div class="hero-buttons">
+
+        <a
+          class="btn btn-gold"
+          href="https://wa.me/923216638470?text=Hello%20Ice%20n%20Spice%2C%20I%20would%20like%20to%20place%20an%20order."
+          target="_blank">
+          💬 Order on WhatsApp
+        </a>
+
+        <a class="btn btn-dark" href="#menu">
+          Explore Full Menu ↓
+        </a>
 
       </div>
 
     </div>
 
+  </div>
 
-    <!-- ================= ABOUT ================= -->
+</section>
 
-    <section id="about">
 
-      <div class="container">
+<!-- ================= QUICK INFO ================= -->
 
-        <div class="about-grid">
+<div class="container quick">
 
-          <div class="about-image">
+  <div class="quick-grid">
 
-            <div class="about-badge">
-              <strong>Made for Every Craving</strong>
-              <p>Fast food · Chinese · BBQ · Burgers & more</p>
-            </div>
+    <div class="quick-item">
 
-          </div>
+      <div class="quick-icon">📍</div>
 
-          <div class="about-copy">
-
-            <div class="section-label">About Ice n Spice</div>
-
-            <h2 class="section-title">
-              A Menu Full of Flavour.
-            </h2>
-
-            <p>
-              Ice n Spice brings together a wide selection of popular
-              fast-food and restaurant favourites in North Nazimabad,
-              Karachi.
-            </p>
-
-            <p>
-              Whether you're craving a loaded burger, crispy broast,
-              Chinese food, BBQ or a refreshing dessert, there's something
-              for every kind of appetite.
-            </p>
-
-            <div class="feature-list">
-
-              <div class="feature">
-                <strong>🍔 Burgers</strong>
-                <span>Classic & signature options</span>
-              </div>
-
-              <div class="feature">
-                <strong>🍗 Broast</strong>
-                <span>Crispy & flavourful</span>
-              </div>
-
-              <div class="feature">
-                <strong>🥢 Chinese</strong>
-                <span>Noodles, soups & more</span>
-              </div>
-
-              <div class="feature">
-                <strong>🔥 BBQ</strong>
-                <span>Grilled favourites</span>
-              </div>
-
-            </div>
-
-          </div>
-
-        </div>
-
+      <div>
+        <small>Location</small>
+        <strong>Block A, North Nazimabad</strong>
       </div>
 
-    </section>
+    </div>
 
+    <div class="quick-item">
 
-    <!-- ================= MENU ================= -->
+      <div class="quick-icon">📞</div>
 
-    <section class="menu-section" id="menu">
-
-      <div class="container">
-
-        <div class="section-head">
-
-          <div class="section-label">Explore Our Menu</div>
-
-          <h2 class="section-title">
-            Something for Every Craving.
-          </h2>
-
-          <p class="section-description">
-            Explore some of the popular categories and dishes associated
-            with Ice n Spice. Ask the restaurant for the latest menu and
-            prices before ordering.
-          </p>
-
-        </div>
-
-
-        <div class="menu-tabs">
-
-          <div class="menu-tab active">Popular</div>
-          <div class="menu-tab">Burgers</div>
-          <div class="menu-tab">Chinese</div>
-          <div class="menu-tab">BBQ</div>
-          <div class="menu-tab">Broast</div>
-          <div class="menu-tab">Drinks</div>
-
-        </div>
-
-
-        <div class="menu-grid">
-
-
-          <!-- CARD 1 -->
-
-          <article class="menu-card">
-
-            <div class="menu-image">
-              <img
-                src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=900&q=85"
-                alt="Burger">
-            </div>
-
-            <div class="menu-content">
-
-              <span class="menu-tag">Signature</span>
-
-              <h3>Zinger Deluxe</h3>
-
-              <p>
-                One of the popular burger choices associated with
-                Ice n Spice.
-              </p>
-
-              <div class="menu-bottom">
-                <span class="price">Ask for price</span>
-
-                <a class="order-mini"
-                   href="https://wa.me/923216638470?text=Hi%2C%20I%27d%20like%20to%20order%20the%20Zinger%20Deluxe."
-                   target="_blank">+</a>
-              </div>
-
-            </div>
-
-          </article>
-
-
-          <!-- CARD 2 -->
-
-          <article class="menu-card">
-
-            <div class="menu-image">
-              <img
-                src="https://images.unsplash.com/photo-1572802419224-296b0aeee0d9?auto=format&fit=crop&w=900&q=85"
-                alt="Burger">
-            </div>
-
-            <div class="menu-content">
-
-              <span class="menu-tag">Special</span>
-
-              <h3>Accident Burger</h3>
-
-              <p>
-                A beef and chicken combination featured among the
-                restaurant's popular items.
-              </p>
-
-              <div class="menu-bottom">
-                <span class="price">From Rs. 350*</span>
-
-                <a class="order-mini"
-                   href="https://wa.me/923216638470?text=Hi%2C%20I%27d%20like%20to%20order%20the%20Accident%20Burger."
-                   target="_blank">+</a>
-              </div>
-
-            </div>
-
-          </article>
-
-
-          <!-- CARD 3 -->
-
-          <article class="menu-card">
-
-            <div class="menu-image">
-              <img
-                src="https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=900&q=85"
-                alt="Broast">
-            </div>
-
-            <div class="menu-content">
-
-              <span class="menu-tag">Crispy</span>
-
-              <h3>Chicken Broast</h3>
-
-              <p>
-                Crispy fried chicken served as one of the restaurant's
-                well-known fast-food choices.
-              </p>
-
-              <div class="menu-bottom">
-                <span class="price">Ask for price</span>
-
-                <a class="order-mini"
-                   href="https://wa.me/923216638470?text=Hi%2C%20I%27d%20like%20to%20order%20Chicken%20Broast."
-                   target="_blank">+</a>
-              </div>
-
-            </div>
-
-          </article>
-
-
-          <!-- CARD 4 -->
-
-          <article class="menu-card">
-
-            <div class="menu-image">
-              <img
-                src="https://images.unsplash.com/photo-1552611052-33e04de081de?auto=format&fit=crop&w=900&q=85"
-                alt="Chinese noodles">
-            </div>
-
-            <div class="menu-content">
-
-              <span class="menu-tag">Chinese</span>
-
-              <h3>Chinese Favourites</h3>
-
-              <p>
-                Enjoy Chinese-style favourites including noodles,
-                soups and other popular dishes.
-              </p>
-
-              <div class="menu-bottom">
-                <span class="price">View options</span>
-
-                <a class="order-mini"
-                   href="https://wa.me/923216638470?text=Hi%2C%20please%20share%20your%20Chinese%20menu."
-                   target="_blank">+</a>
-              </div>
-
-            </div>
-
-          </article>
-
-
-          <!-- CARD 5 -->
-
-          <article class="menu-card">
-
-            <div class="menu-image">
-              <img
-                src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=900&q=85"
-                alt="BBQ">
-            </div>
-
-            <div class="menu-content">
-
-              <span class="menu-tag">Grill</span>
-
-              <h3>BBQ Selection</h3>
-
-              <p>
-                A selection of grilled and BBQ favourites for meat
-                lovers and family meals.
-              </p>
-
-              <div class="menu-bottom">
-                <span class="price">Ask for price</span>
-
-                <a class="order-mini"
-                   href="https://wa.me/923216638470?text=Hi%2C%20please%20share%20your%20BBQ%20menu."
-                   target="_blank">+</a>
-              </div>
-
-            </div>
-
-          </article>
-
-
-          <!-- CARD 6 -->
-
-          <article class="menu-card">
-
-            <div class="menu-image">
-              <img
-                src="https://images.unsplash.com/photo-1601050690117-94f5f6fa8bd7?auto=format&fit=crop&w=900&q=85"
-                alt="Wrap">
-            </div>
-
-            <div class="menu-content">
-
-              <span class="menu-tag">Quick Bite</span>
-
-              <h3>Wraps & Rolls</h3>
-
-              <p>
-                Convenient, flavour-packed options for a quick meal
-                or evening craving.
-              </p>
-
-              <div class="menu-bottom">
-                <span class="price">Ask for price</span>
-
-                <a class="order-mini"
-                   href="https://wa.me/923216638470?text=Hi%2C%20please%20share%20your%20Wraps%20and%20Rolls%20menu."
-                   target="_blank">+</a>
-              </div>
-
-            </div>
-
-          </article>
-
-
-        </div>
-
-        <p style="color:#666;font-size:11px;margin-top:20px;">
-          * Price shown for the Accident Burger is based on a publicly listed
-          menu/deal reference and may change. Please confirm current prices
-          directly with Ice n Spice.
-        </p>
-
+      <div>
+        <small>Order / Delivery</small>
+        <strong>0321 6638470</strong>
       </div>
 
-    </section>
+    </div>
 
+    <div class="quick-item">
 
-    <!-- ================= FEATURE BANNER ================= -->
+      <div class="quick-icon">🍽️</div>
 
-    <section class="feature-banner">
-
-      <div class="container">
-
-        <div class="banner">
-
-          <div class="banner-content">
-
-            <div class="section-label">
-              Your Next Craving
-            </div>
-
-            <h2>
-              Good Food.<br>
-              Good Mood.
-            </h2>
-
-            <p>
-              Choose your favourite, send your order on WhatsApp,
-              and enjoy your meal.
-            </p>
-
-            <div style="margin-top:25px;">
-
-              <a class="btn btn-primary"
-                 href="https://wa.me/923216638470?text=Hello%20Ice%20n%20Spice%2C%20please%20share%20your%20latest%20menu."
-                 target="_blank">
-                Get Latest Menu
-              </a>
-
-            </div>
-
-          </div>
-
-        </div>
-
+      <div>
+        <small>Kitchen</small>
+        <strong>Fast Food · Chinese · BBQ</strong>
       </div>
 
-    </section>
+    </div>
 
+  </div>
 
-    <!-- ================= SPECIALS ================= -->
+</div>
 
-    <section id="specials">
 
-      <div class="container">
+<!-- ================= ABOUT ================= -->
 
-        <div class="section-head">
+<section id="about">
 
-          <div class="section-label">
-            Why People Come Back
-          </div>
+  <div class="container">
 
-          <h2 class="section-title">
-            Built Around Variety.
-          </h2>
+    <div class="about-grid">
 
-          <p class="section-description">
-            A broad selection means everyone at the table can find
-            something they enjoy.
-          </p>
+      <div class="about-image">
 
-        </div>
+        <div class="about-card">
 
-
-        <div class="special-grid">
-
-          <div class="special-card">
-
-            <span class="special-number">01 · BURGERS</span>
-
-            <h3>Big Burger Cravings</h3>
-
-            <p>
-              From Zinger Deluxe to the distinctive Accident Burger,
-              discover the burger side of Ice n Spice.
-            </p>
-
-          </div>
-
-
-          <div class="special-card">
-
-            <span class="special-number">02 · CHINESE</span>
-
-            <h3>Chinese Favourites</h3>
-
-            <p>
-              Noodles, soups and Chinese-inspired favourites make
-              the menu more than just fast food.
-            </p>
-
-          </div>
-
-
-          <div class="special-card">
-
-            <span class="special-number">03 · FAMILY</span>
-
-            <h3>Something for Everyone</h3>
-
-            <p>
-              Fast food, BBQ, broast, rolls and more give families
-              and groups plenty of options.
-            </p>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- ================= LOCATION ================= -->
-
-    <section class="location" id="location">
-
-      <div class="container">
-
-        <div class="section-head">
-
-          <div class="section-label">Find Us</div>
-
-          <h2 class="section-title">
-            Visit Ice n Spice.
-          </h2>
-
-          <p class="section-description">
-            Located in Block A, North Nazimabad, Karachi.
-          </p>
-
-        </div>
-
-
-        <div class="location-grid">
-
-
-          <div class="contact-card">
-
-            <div class="contact-item">
-
-              <small>Address</small>
-
-              <strong>
-                Shop #2, SDII<br>
-                Block A, North Nazimabad<br>
-                Karachi, Pakistan
-              </strong>
-
-            </div>
-
-
-            <div class="contact-item">
-
-              <small>Phone / WhatsApp</small>
-
-              <strong>
-                +92 321 6638470
-              </strong>
-
-            </div>
-
-
-            <div class="contact-item">
-
-              <small>Dining Options</small>
-
-              <strong>
-                Dine-in · Takeaway · Delivery
-              </strong>
-
-            </div>
-
-
-            <div style="margin-top:25px;">
-
-              <a class="btn btn-primary"
-                 href="https://wa.me/923216638470?text=Hello%20Ice%20n%20Spice%2C%20I%20would%20like%20to%20place%20an%20order."
-                 target="_blank">
-                💬 WhatsApp Us
-              </a>
-
-            </div>
-
-          </div>
-
-
-          <div class="map-box">
-
-            <div class="map-overlay">
-
-              <strong>North Nazimabad, Karachi</strong>
-
-              <span>
-                Block A · Ice n Spice
-              </span>
-
-              <div style="margin-top:15px;">
-
-                <a class="btn btn-primary"
-                   href="https://www.google.com/maps/search/?api=1&query=Ice%20n%20Spice%20Block%20A%20North%20Nazimabad%20Karachi"
-                   target="_blank">
-                  📍 Open in Google Maps
-                </a>
-
-              </div>
-
-            </div>
-
-          </div>
-
-        </div>
-
-      </div>
-
-    </section>
-
-
-    <!-- ================= CTA ================= -->
-
-    <section class="cta">
-
-      <div class="container">
-
-        <div class="cta-content">
-
-          <div class="section-label">
-            Ready to Order?
-          </div>
-
-          <h2>
-            Your Craving<br>
-            Starts Here.
-          </h2>
+          <strong>More Than Just Fast Food.</strong>
 
           <p>
-            Contact Ice n Spice directly for the latest menu,
-            prices, availability and order details.
+            Zingers · Burgers · Chinese · Arabic Wraps · BBQ · Platters
           </p>
 
-          <a class="btn btn-primary"
-             href="https://wa.me/923216638470?text=Hello%20Ice%20n%20Spice%2C%20I%20would%20like%20to%20place%20an%20order."
-             target="_blank">
+        </div>
+
+      </div>
+
+
+      <div class="about-copy">
+
+        <div class="section-label">
+          Welcome to Ice n Spice
+        </div>
+
+        <h2 class="section-title">
+          One Place.<br>
+          Endless Cravings.
+        </h2>
+
+        <p>
+          Ice n Spice brings together a wide variety of flavours under one
+          roof — from crispy chicken and gourmet burgers to Chinese dishes,
+          Arabic wraps, BBQ and signature platters.
+        </p>
+
+        <p>
+          Whether you're ordering for yourself, sharing with friends or
+          planning a family meal, the menu is built around variety.
+        </p>
+
+        <div class="about-features">
+
+          <div class="about-feature">
+            <b>🍔 Gourmet Burgers</b>
+            <span>Zinger & signature burgers</span>
+          </div>
+
+          <div class="about-feature">
+            <b>🥢 Chinese</b>
+            <span>Noodles, rice & favourites</span>
+          </div>
+
+          <div class="about-feature">
+            <b>🥙 Arabic Wraps</b>
+            <span>Multiple regional flavours</span>
+          </div>
+
+          <div class="about-feature">
+            <b>🔥 BBQ & Platters</b>
+            <span>Grills for individuals & groups</span>
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ================= FEATURED ================= -->
+
+<section class="featured">
+
+  <div class="container">
+
+    <div class="section-head">
+
+      <div class="section-label">
+        Customer Favourites
+      </div>
+
+      <h2 class="section-title">
+        Built for Serious Cravings.
+      </h2>
+
+      <p class="section-text">
+        Explore some of the signature categories that make the Ice n Spice
+        menu stand out.
+      </p>
+
+    </div>
+
+
+    <div class="feature-grid">
+
+      <article class="feature-card">
+
+        <img
+          src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=1000&q=90"
+          alt="Gourmet Burger">
+
+        <div class="feature-overlay">
+
+          <span>Signature</span>
+
+          <h3>Zinger & Gourmet</h3>
+
+          <p>
+            Zinger Max, Zinger Fiery, Zinger Burger, Accident Burger,
+            Mighty King and more.
+          </p>
+
+        </div>
+
+      </article>
+
+
+      <article class="feature-card">
+
+        <img
+          src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=1000&q=90"
+          alt="BBQ">
+
+        <div class="feature-overlay">
+
+          <span>From the Grill</span>
+
+          <h3>BBQ & Grills</h3>
+
+          <p>
+            Adana Kebab, Chicken Khubidah Kebab, Thai Namkeen Boti,
+            Peri Peri Drumsticks and more.
+          </p>
+
+        </div>
+
+      </article>
+
+
+      <article class="feature-card">
+
+        <img
+          src="https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=1000&q=90"
+          alt="Platter">
+
+        <div class="feature-overlay">
+
+          <span>Sharing</span>
+
+          <h3>Royal Platters</h3>
+
+          <p>
+            From Classic for One to Royal Platter and Mix Grill options,
+            made for serious meals.
+          </p>
+
+        </div>
+
+      </article>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ================= FULL MENU ================= -->
+
+<section class="menu-section" id="menu">
+
+  <div class="container">
+
+    <div class="section-head">
+
+      <div class="section-label">
+        Full Menu
+      </div>
+
+      <h2 class="section-title">
+        Pick Your Craving.
+      </h2>
+
+      <p class="section-text">
+        Browse the complete menu by category. Prices shown below are
+        transcribed from the menu provided for this website demo.
+      </p>
+
+    </div>
+
+
+    <div class="menu-toolbar">
+
+      <div class="categories">
+
+        <button class="cat-btn active" data-category="All">
+          All
+        </button>
+
+        <button class="cat-btn" data-category="Starters">
+          Starters
+        </button>
+
+        <button class="cat-btn" data-category="Sandwiches">
+          Sandwiches
+        </button>
+
+        <button class="cat-btn" data-category="Chinese">
+          Chinese
+        </button>
+
+        <button class="cat-btn" data-category="Zinger & Gourmet">
+          Zinger
+        </button>
+
+        <button class="cat-btn" data-category="Burgers & Broast">
+          Burgers
+        </button>
+
+        <button class="cat-btn" data-category="Combos">
+          Combos
+        </button>
+
+        <button class="cat-btn" data-category="Arabic Wraps">
+          Wraps
+        </button>
+
+        <button class="cat-btn" data-category="BBQ">
+          BBQ
+        </button>
+
+        <button class="cat-btn" data-category="Platters">
+          Platters
+        </button>
+
+        <button class="cat-btn" data-category="Sidelines">
+          Sides
+        </button>
+
+        <button class="cat-btn" data-category="Hot N Roll">
+          Hot N Roll
+        </button>
+
+      </div>
+
+
+      <div class="search-box">
+
+        <input
+          type="search"
+          id="menuSearch"
+          placeholder="Search menu...">
+
+      </div>
+
+    </div>
+
+
+    <div class="menu-grid" id="menuGrid"></div>
+
+    <div class="no-results" id="noResults">
+      No menu item found. Try another search.
+    </div>
+
+    <p style="
+      color:#666;
+      font-size:10px;
+      line-height:1.7;
+      margin-top:25px;
+    ">
+      Menu prices are based on the menu board provided for this demo and
+      may change. Please confirm current availability and pricing directly
+      with Ice n Spice before ordering.
+    </p>
+
+  </div>
+
+</section>
+
+
+<!-- ================= PLATTERS ================= -->
+
+<section class="platter-section" id="platters">
+
+  <div class="container">
+
+    <div class="section-head">
+
+      <div class="section-label">
+        Made to Share
+      </div>
+
+      <h2 class="section-title">
+        The Platter Collection.
+      </h2>
+
+      <p class="section-text">
+        A dedicated selection of grilled chicken, kebabs, rice and
+        signature sauces.
+      </p>
+
+    </div>
+
+
+    <div class="platter-grid">
+
+      <div class="platter-main">
+
+        <div class="platter-content">
+
+          <div class="price">
+            PKR 3,990
+          </div>
+
+          <h3>Royal Platter</h3>
+
+          <p>
+            Beef Adana Kebab, Khubidah Kebab, Peri Peri Chicken,
+            Sheesh Tawouk Chicken, Thai Namkeen, Madhbi Chicken,
+            special rice and authentic Arabic sauce.
+          </p>
+
+          <a
+            class="btn btn-gold"
+            style="margin-top:20px;"
+            href="https://wa.me/923216638470?text=Hello%20Ice%20n%20Spice%2C%20I%20want%20to%20order%20the%20Royal%20Platter."
+            target="_blank">
+            Order Royal Platter
+          </a>
+
+        </div>
+
+      </div>
+
+
+      <div class="platter-list">
+
+        <div class="platter-small">
+          <span>01</span>
+          <h4>Classic for One</h4>
+          <strong>PKR 1,000</strong>
+        </div>
+
+        <div class="platter-small">
+          <span>02</span>
+          <h4>Classic for Two</h4>
+          <strong>PKR 2,200</strong>
+        </div>
+
+        <div class="platter-small">
+          <span>03</span>
+          <h4>Kebabi Platter</h4>
+          <strong>PKR 2,300</strong>
+        </div>
+
+        <div class="platter-small">
+          <span>04</span>
+          <h4>Madhbi Chicken Full</h4>
+          <strong>PKR 2,990</strong>
+        </div>
+
+        <div class="platter-small">
+          <span>05</span>
+          <h4>Madhbi Chicken Half</h4>
+          <strong>PKR 1,600</strong>
+        </div>
+
+        <div class="platter-small">
+          <span>06</span>
+          <h4>Madhbi Chicken Quarter</h4>
+          <strong>PKR 800</strong>
+        </div>
+
+        <div class="platter-small">
+          <span>07</span>
+          <h4>Mix Grill</h4>
+          <strong>PKR 1,100</strong>
+        </div>
+
+        <div class="platter-small">
+          <span>08</span>
+          <h4>Mix Grill With Rice</h4>
+          <strong>PKR 1,400</strong>
+        </div>
+
+        <div class="platter-small">
+          <span>09</span>
+          <h4>Creamy & Cheesy Kebab</h4>
+          <strong>PKR 1,000</strong>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<!-- ================= CONTACT ================= -->
+
+<section class="contact" id="contact">
+
+  <div class="container">
+
+    <div class="section-head">
+
+      <div class="section-label">
+        Visit / Order
+      </div>
+
+      <h2 class="section-title">
+        Find Ice n Spice.
+      </h2>
+
+      <p class="section-text">
+        Order directly or visit the North Nazimabad location.
+      </p>
+
+    </div>
+
+
+    <div class="contact-grid">
+
+
+      <div class="contact-card">
+
+        <div class="contact-line">
+
+          <small>Address</small>
+
+          <strong>
+            Shop #2, North Plaza, SD-II, Block-A,<br>
+            Opposite Jinnah University for Women,<br>
+            North Nazimabad, Karachi.
+          </strong>
+
+        </div>
+
+
+        <div class="contact-line">
+
+          <small>Delivery Numbers</small>
+
+          <div class="phone-list">
+
+            <a class="phone" href="tel:+923216638470">
+              0321-6638470
+            </a>
+
+            <a class="phone" href="tel:+922136638470">
+              0213-6638470
+            </a>
+
+            <a class="phone" href="tel:+923357772572">
+              0335-7772572
+            </a>
+
+            <a class="phone" href="tel:+923367896555">
+              0336-7896555
+            </a>
+
+          </div>
+
+        </div>
+
+
+        <div class="contact-line">
+
+          <small>Instagram</small>
+
+          <strong class="instagram">
+            @IceNSpiceKarachi
+          </strong>
+
+        </div>
+
+
+        <div style="margin-top:25px;">
+
+          <a
+            class="btn btn-gold"
+            href="https://wa.me/923216638470?text=Hello%20Ice%20n%20Spice%2C%20I%20would%20like%20to%20place%20an%20order."
+            target="_blank">
             💬 Order on WhatsApp
           </a>
 
@@ -1617,43 +1718,865 @@
 
       </div>
 
-    </section>
 
-  </main>
+      <div class="map">
 
+        <div class="map-card">
 
-  <!-- ================= FOOTER ================= -->
+          <h3>North Nazimabad, Karachi</h3>
 
-  <footer>
+          <p>
+            Shop #2, North Plaza, SD-II, Block-A,
+            opposite Jinnah University for Women.
+          </p>
 
-    <div class="container footer-inner">
+          <a
+            class="btn btn-gold"
+            style="margin-top:15px;"
+            href="https://www.google.com/maps/search/?api=1&query=Ice%20n%20Spice%20Shop%202%20North%20Plaza%20SD-II%20Block-A%20North%20Nazimabad%20Karachi"
+            target="_blank">
+            📍 Open Google Maps
+          </a>
 
-      <div class="footer-brand">
-        Ice n Spice
-      </div>
+        </div>
 
-      <div class="footer-copy">
-        © 2026 Ice n Spice · North Nazimabad, Karachi
-      </div>
-
-      <div class="footer-copy">
-        Fast Food · Chinese · BBQ · Burgers
       </div>
 
     </div>
 
-  </footer>
+  </div>
+
+</section>
 
 
-  <!-- ================= FLOATING WHATSAPP ================= -->
+<!-- ================= CTA ================= -->
 
-  <a
-    class="whatsapp"
-    href="https://wa.me/923216638470?text=Hello%20Ice%20n%20Spice%2C%20I%20would%20like%20to%20place%20an%20order."
-    target="_blank"
-    aria-label="WhatsApp">
-    ☎
-  </a>
+<section class="cta">
+
+  <div class="container">
+
+    <div class="cta-content">
+
+      <div class="section-label">
+        Hungry?
+      </div>
+
+      <h2>
+        Let's Make<br>
+        It Delicious.
+      </h2>
+
+      <p>
+        Browse the menu, choose your favourite and contact Ice n Spice
+        directly for your order.
+      </p>
+
+      <a
+        class="btn btn-gold"
+        href="https://wa.me/923216638470?text=Hello%20Ice%20n%20Spice%2C%20I%20would%20like%20to%20place%20an%20order."
+        target="_blank">
+        💬 Start Your Order
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+</main>
+
+
+<!-- ================= FOOTER ================= -->
+
+<footer>
+
+  <div class="container footer">
+
+    <div class="footer-brand">
+      Ice n Spice
+    </div>
+
+    <div class="footer-text">
+      © 2026 Ice n Spice · North Nazimabad, Karachi<br>
+      Fast Food · Chinese · BBQ · Burgers · Platters
+    </div>
+
+    <div class="instagram">
+      @IceNSpiceKarachi
+    </div>
+
+  </div>
+
+</footer>
+
+
+<!-- ================= WHATSAPP ================= -->
+
+<a
+  class="whatsapp"
+  href="https://wa.me/923216638470?text=Hello%20Ice%20n%20Spice%2C%20I%20would%20like%20to%20place%20an%20order."
+  target="_blank"
+  aria-label="WhatsApp">
+  ☎
+</a>
+
+
+<script>
+
+/* =========================================================
+   ICE N SPICE MENU DATA
+   ========================================================= */
+
+const menuItems = [
+
+  /* STARTERS */
+
+  {
+    name:"Chicken Nuggets",
+    price:"PKR 480",
+    category:"Starters",
+    desc:"06 pieces."
+  },
+
+  {
+    name:"Chicken & Chips",
+    price:"PKR 480",
+    category:"Starters",
+    desc:"Crispy chicken served with fries."
+  },
+
+  {
+    name:"Tempura Style Chicken Strips",
+    price:"PKR 480",
+    category:"Starters",
+    desc:"Crispy tempura-style chicken strips."
+  },
+
+  {
+    name:"French Fries Garlic",
+    price:"PKR 250",
+    category:"Starters",
+    desc:"Golden fries with garlic flavour."
+  },
+
+  {
+    name:"French Fries Plain",
+    price:"PKR 200",
+    category:"Starters",
+    desc:"Classic crispy fries."
+  },
+
+  {
+    name:"Chicken Corn Soup",
+    price:"PKR 170",
+    category:"Starters",
+    desc:"Warm chicken and sweet corn soup."
+  },
+
+  {
+    name:"Hot & Sour Soup",
+    price:"PKR 190",
+    category:"Starters",
+    desc:"Classic hot and sour soup."
+  },
+
+  {
+    name:"Chicken Vegetable Soup",
+    price:"PKR 170",
+    category:"Starters",
+    desc:"Chicken and vegetable soup."
+  },
+
+
+  /* SANDWICHES */
+
+  {
+    name:"BBQ Sandwich",
+    price:"PKR 650",
+    category:"Sandwiches",
+    desc:"Grilled chicken marinated with special spices, ketchup, tomatoes and signature sauce."
+  },
+
+  {
+    name:"Italian Sandwich",
+    price:"PKR 600",
+    category:"Sandwiches",
+    desc:"Marinated chicken with cream and butter, capsicum and onion. Served with fries and coleslaw."
+  },
+
+  {
+    name:"Crispy Sandwich",
+    price:"PKR 480",
+    category:"Sandwiches",
+    desc:"Crispy fried chicken chunks served with fries and coleslaw."
+  },
+
+  {
+    name:"Club Sandwich",
+    price:"PKR 550",
+    category:"Sandwiches",
+    desc:"Traditional English sandwich with chicken, egg, tomato and cucumber."
+  },
+
+
+  /* CHINESE */
+
+  {
+    name:"Chicken Chow Mein",
+    price:"PKR 700",
+    category:"Chinese",
+    desc:"Chicken chow mein."
+  },
+
+  {
+    name:"Chicken Shashlik",
+    price:"PKR 700",
+    category:"Chinese",
+    desc:"Served with rice."
+  },
+
+  {
+    name:"Chicken Manchurian",
+    price:"PKR 700",
+    category:"Chinese",
+    desc:"Served with rice."
+  },
+
+  {
+    name:"Chicken Chilly Veggie",
+    price:"PKR 700",
+    category:"Chinese",
+    desc:"Served with rice."
+  },
+
+  {
+    name:"Chicken Chilly Dry",
+    price:"PKR 700",
+    category:"Chinese",
+    desc:"Served with rice."
+  },
+
+  {
+    name:"Szechwan Chicken",
+    price:"PKR 700",
+    category:"Chinese",
+    desc:"Spicy Szechwan-style chicken."
+  },
+
+  {
+    name:"Beef Chilly Veggie",
+    price:"PKR 780",
+    category:"Chinese",
+    desc:"Served with rice."
+  },
+
+  {
+    name:"Beef Chilly Dry",
+    price:"PKR 780",
+    category:"Chinese",
+    desc:"Served with rice."
+  },
+
+  {
+    name:"Beef Chow Mein",
+    price:"PKR 780",
+    category:"Chinese",
+    desc:"Beef chow mein."
+  },
+
+  {
+    name:"Chicken Fried Rice",
+    price:"PKR 400",
+    category:"Chinese",
+    desc:"Chicken fried rice."
+  },
+
+  {
+    name:"Chicken Shashlik",
+    price:"PKR 400",
+    category:"Chinese",
+    desc:"Without rice."
+  },
+
+  {
+    name:"Veggie Fried Rice",
+    price:"PKR 350",
+    category:"Chinese",
+    desc:"Vegetable fried rice."
+  },
+
+
+  /* ZINGER */
+
+  {
+    name:"Zinger Max",
+    price:"PKR 470",
+    category:"Zinger & Gourmet",
+    desc:"Juicy thigh fried chicken fillet with New York style sauce."
+  },
+
+  {
+    name:"Zinger Fiery",
+    price:"PKR 470",
+    category:"Zinger & Gourmet",
+    desc:"Fried thigh chicken fillet with fiery hot spicy sauce, jalapeno and iceberg."
+  },
+
+  {
+    name:"Zinger Burger",
+    price:"PKR 480",
+    category:"Zinger & Gourmet",
+    desc:"Crispy chest chicken fillet with chilli garlic and mayo."
+  },
+
+  {
+    name:"Zinger with Cheese & Coleslaw",
+    price:"PKR 530",
+    category:"Zinger & Gourmet",
+    desc:"Crispy chest fillet topped with signature sauce and iceberg."
+  },
+
+  {
+    name:"Accident Burger",
+    price:"PKR 700",
+    category:"Zinger & Gourmet",
+    desc:"Beef patty, crispy chicken fillet, cheddar cheese and secret sauce."
+  },
+
+  {
+    name:"Mighty King",
+    price:"PKR 700",
+    category:"Zinger & Gourmet",
+    desc:"Crispy double thigh chicken fillet with iceberg and signature sauce."
+  },
+
+  {
+    name:"Stuff Cheese Burger",
+    price:"PKR 570",
+    category:"Zinger & Gourmet",
+    desc:"Melted cheddar cheese stuffed into fried chicken with secret sauce."
+  },
+
+  {
+    name:"American Classic",
+    price:"PKR 550",
+    category:"Zinger & Gourmet",
+    desc:"Beef patty, iceberg, caramelized onions, fresh tomatoes, American sauce and cheddar cheese."
+  },
+
+  {
+    name:"Crispy Beef",
+    price:"PKR 490",
+    category:"Zinger & Gourmet",
+    desc:"Crispy beef patty with caramelized onions and signature mustard sauce."
+  },
+
+
+  /* HOT N ROLL */
+
+  {
+    name:"Adana Twist",
+    price:"PKR 300",
+    category:"Hot N Roll",
+    desc:"Hot and flavourful Adana-style twist."
+  },
+
+  {
+    name:"Mayo Twist",
+    price:"PKR 300",
+    category:"Hot N Roll",
+    desc:"Creamy mayo twist."
+  },
+
+
+  /* BURGERS & BROAST */
+
+  {
+    name:"Qtr. Broast (Chest)",
+    price:"PKR 600",
+    category:"Burgers & Broast",
+    desc:"Quarter broast chest."
+  },
+
+  {
+    name:"Qtr. Broast (Leg)",
+    price:"PKR 550",
+    category:"Burgers & Broast",
+    desc:"Quarter broast leg."
+  },
+
+  {
+    name:"Chicken Burger",
+    price:"PKR 380",
+    category:"Burgers & Broast",
+    desc:"Classic chicken burger."
+  },
+
+  {
+    name:"Chicken Cheese Burger",
+    price:"PKR 430",
+    category:"Burgers & Broast",
+    desc:"Chicken burger with cheese."
+  },
+
+  {
+    name:"Egg & Chicken Burger",
+    price:"PKR 430",
+    category:"Burgers & Broast",
+    desc:"Chicken burger with egg."
+  },
+
+  {
+    name:"Mega Chicken Burger",
+    price:"PKR 600",
+    category:"Burgers & Broast",
+    desc:"Loaded chicken burger."
+  },
+
+  {
+    name:"Beef Burger",
+    price:"PKR 400",
+    category:"Burgers & Broast",
+    desc:"Classic beef burger."
+  },
+
+  {
+    name:"Beef Cheese Burger",
+    price:"PKR 450",
+    category:"Burgers & Broast",
+    desc:"Beef burger with cheese."
+  },
+
+  {
+    name:"Egg & Beef Burger",
+    price:"PKR 450",
+    category:"Burgers & Broast",
+    desc:"Beef burger with egg."
+  },
+
+  {
+    name:"Mega Beef Burger",
+    price:"PKR 650",
+    category:"Burgers & Broast",
+    desc:"Loaded mega beef burger."
+  },
+
+
+  /* COMBOS */
+
+  {
+    name:"Combo 1",
+    price:"PKR 1030",
+    category:"Combos",
+    desc:"2 Zinger Burgers + 2 × 300 ml Cold Drink."
+  },
+
+  {
+    name:"Combo 2",
+    price:"PKR 1080",
+    category:"Combos",
+    desc:"Qtr. Leg + Zinger Max + 2 × 300 ml Cold Drink."
+  },
+
+  {
+    name:"Combo 3",
+    price:"PKR 1200",
+    category:"Combos",
+    desc:"2 Qtr. Leg + Chest + 2 × 300 ml Cold Drink."
+  },
+
+  {
+    name:"Combo 4",
+    price:"PKR 2200",
+    category:"Combos",
+    desc:"9 pcs. Leg and Thigh + 4 Bun + Fries."
+  },
+
+  {
+    name:"Crispy Platter",
+    price:"PKR 1950",
+    category:"Combos",
+    desc:"Zinger Max, Zinger Fiery, Zinger Regular, Qtr Leg, onion rings, garlic fries and 1 Ltr cold drink."
+  },
+
+
+  /* SIDELINES */
+
+  {
+    name:"Dine-in 1 Ltr Cold Drink",
+    price:"PKR 300",
+    category:"Sidelines",
+    desc:"1 litre cold drink."
+  },
+
+  {
+    name:"345 ml Cold Drink / Sting",
+    price:"PKR 80/90",
+    category:"Sidelines",
+    desc:"Cold drink or Sting."
+  },
+
+  {
+    name:"Mineral Water",
+    price:"PKR 60/100",
+    category:"Sidelines",
+    desc:"Small / large."
+  },
+
+  {
+    name:"Coleslaw",
+    price:"PKR 50",
+    category:"Sidelines",
+    desc:"Fresh coleslaw."
+  },
+
+  {
+    name:"Extra Cheese Slice",
+    price:"PKR 50",
+    category:"Sidelines",
+    desc:"Additional cheese slice."
+  },
+
+  {
+    name:"Extra Bun",
+    price:"PKR 40",
+    category:"Sidelines",
+    desc:"Additional bun."
+  },
+
+  {
+    name:"Disposable Glass",
+    price:"PKR 05",
+    category:"Sidelines",
+    desc:"Disposable serving glass."
+  },
+
+
+  /* ARABIC WRAPS */
+
+  {
+    name:"Original Turkish Wrap",
+    price:"PKR 400 / 520",
+    category:"Arabic Wraps",
+    desc:"Tortilla, beef Adana kebab, Arabic sauce, iceberg, mix pickles, fries, onion and tomato."
+  },
+
+  {
+    name:"Persian Twist",
+    price:"PKR 400 / 520",
+    category:"Arabic Wraps",
+    desc:"Chicken Khubidah Kebab, honey mustard sauce, iceberg, fries, capsicum and mix pickles."
+  },
+
+  {
+    name:"Arabic Wraps",
+    price:"PKR 400 / 520",
+    category:"Arabic Wraps",
+    desc:"Sheesh Tawouk chicken, jalapeno, fries, iceberg and secret sauce."
+  },
+
+  {
+    name:"Tijuana Wraps",
+    price:"PKR 400 / 520",
+    category:"Arabic Wraps",
+    desc:"Chicken Khubidah Kebab, minced pickle, Mexican sauce, iceberg and fries."
+  },
+
+  {
+    name:"Moroccan Wraps",
+    price:"PKR 400 / 520",
+    category:"Arabic Wraps",
+    desc:"Sheesh Tawouk chicken, ranch sauce, fries, jalapeno and iceberg."
+  },
+
+  {
+    name:"Shawarma Wraps",
+    price:"PKR 400 / 520",
+    category:"Arabic Wraps",
+    desc:"Sheesh Tawouk chicken, hummus, tahina, mix pickles, fries, olives and Arabic sauce."
+  },
+
+  {
+    name:"Zinger Wrap",
+    price:"PKR 520",
+    category:"Arabic Wraps",
+    desc:"Juicy fried chicken chunks, pickles, jalapenos, spicy cream sauce and crispy fries."
+  },
+
+
+  /* BBQ */
+
+  {
+    name:"Adana Kebab",
+    price:"PKR 700",
+    category:"BBQ",
+    desc:"Traditional grilled Adana kebab."
+  },
+
+  {
+    name:"Chicken Khubidah Kebab",
+    price:"PKR 700",
+    category:"BBQ",
+    desc:"Chicken Khubidah kebab."
+  },
+
+  {
+    name:"Thai Namkeen Boti",
+    price:"PKR 700",
+    category:"BBQ",
+    desc:"Thai-style namkeen boti."
+  },
+
+  {
+    name:"Peri Peri Drum Stick",
+    price:"PKR 500",
+    category:"BBQ",
+    desc:"Peri peri chicken drumsticks."
+  },
+
+  {
+    name:"Madhbi Grilled Tikka",
+    price:"PKR 470/500",
+    category:"BBQ",
+    desc:"Leg / chest."
+  },
+
+  {
+    name:"Extra Rice",
+    price:"PKR 300",
+    category:"BBQ",
+    desc:"Special rice."
+  },
+
+  {
+    name:"Puri Paratha",
+    price:"PKR 60/100",
+    category:"BBQ",
+    desc:"Puri paratha."
+  },
+
+  {
+    name:"Garlic Sauce",
+    price:"PKR 100/200",
+    category:"BBQ",
+    desc:"Garlic sauce."
+  },
+
+
+  /* PLATTERS */
+
+  {
+    name:"Classic for One",
+    price:"PKR 1000",
+    category:"Platters",
+    desc:"Khubidah Kebab, Peri Peri Chicken and Ice n Spice special rice with authentic Arabic sauce."
+  },
+
+  {
+    name:"Classic for Two",
+    price:"PKR 2200",
+    category:"Platters",
+    desc:"Adana Kebab, Peri Peri Chicken, Sheesh Tawouk, Thai Namkeen and special rice."
+  },
+
+  {
+    name:"Royal Platter",
+    price:"PKR 3990",
+    category:"Platters",
+    desc:"Beef Adana, Khubidah Kebab, Peri Peri Chicken, Sheesh Tawouk, Thai Namkeen, Madhbi Chicken and special rice."
+  },
+
+  {
+    name:"Kebabi Platter",
+    price:"PKR 2300",
+    category:"Platters",
+    desc:"2 Khubidah Kebab, 2 Beef Adana Kebab and 2 Royal Turkish Kebab with special rice and grilled vegetables."
+  },
+
+  {
+    name:"Madhbi Grilled Chicken Full",
+    price:"PKR 2990",
+    category:"Platters",
+    desc:"Traditional Yemeni grilled chicken served over rice."
+  },
+
+  {
+    name:"Madhbi Grilled Chicken Half",
+    price:"PKR 1600",
+    category:"Platters",
+    desc:"Traditional Yemeni grilled chicken served over rice."
+  },
+
+  {
+    name:"Madhbi Grilled Chicken Quarter",
+    price:"PKR 800",
+    category:"Platters",
+    desc:"Traditional Yemeni spice tikka with special rice and sauce."
+  },
+
+  {
+    name:"Mix Grill",
+    price:"PKR 1100",
+    category:"Platters",
+    desc:"Beef Adana Kebab, Khubidah Kebab and Peri Peri Chicken with authentic Arabic sauce."
+  },
+
+  {
+    name:"Mix Grill With Rice",
+    price:"PKR 1400",
+    category:"Platters",
+    desc:"Mixed grill served with special rice."
+  },
+
+  {
+    name:"Creamy & Cheesy Kebab",
+    price:"PKR 1000",
+    category:"Platters",
+    desc:"Chicken and beef kebab topped with special creamy and cheesy sauce, served with paratha."
+  }
+
+];
+
+
+/* =========================================================
+   MENU RENDER
+   ========================================================= */
+
+const menuGrid = document.getElementById("menuGrid");
+const noResults = document.getElementById("noResults");
+const searchInput = document.getElementById("menuSearch");
+
+let activeCategory = "All";
+
+
+function renderMenu(){
+
+  const search =
+    searchInput.value
+      .trim()
+      .toLowerCase();
+
+  const filtered = menuItems.filter(item => {
+
+    const categoryMatch =
+      activeCategory === "All" ||
+      item.category === activeCategory;
+
+    const searchMatch =
+      item.name.toLowerCase().includes(search) ||
+      item.category.toLowerCase().includes(search) ||
+      item.desc.toLowerCase().includes(search);
+
+    return categoryMatch && searchMatch;
+
+  });
+
+
+  menuGrid.innerHTML = "";
+
+
+  filtered.forEach(item => {
+
+    const card = document.createElement("article");
+
+    card.className = "menu-card";
+
+    const message =
+      `Hello Ice n Spice, I would like to order ${item.name} (${item.price}).`;
+
+    const whatsapp =
+      "https://wa.me/923216638470?text=" +
+      encodeURIComponent(message);
+
+
+    card.innerHTML = `
+
+      <div class="menu-top">
+
+        <div class="menu-name">
+          ${item.name}
+        </div>
+
+        <div class="menu-price">
+          ${item.price}
+        </div>
+
+      </div>
+
+      <span class="menu-category">
+        ${item.category}
+      </span>
+
+      <div class="menu-description">
+        ${item.desc}
+      </div>
+
+      <a
+        class="order-item"
+        href="${whatsapp}"
+        target="_blank">
+        Order This →
+      </a>
+
+    `;
+
+    menuGrid.appendChild(card);
+
+  });
+
+
+  noResults.style.display =
+    filtered.length === 0
+      ? "block"
+      : "none";
+
+}
+
+
+/* =========================================================
+   CATEGORY FILTER
+   ========================================================= */
+
+document
+  .querySelectorAll(".cat-btn")
+  .forEach(button => {
+
+    button.addEventListener("click", () => {
+
+      document
+        .querySelectorAll(".cat-btn")
+        .forEach(btn =>
+          btn.classList.remove("active")
+        );
+
+      button.classList.add("active");
+
+      activeCategory =
+        button.dataset.category;
+
+      renderMenu();
+
+    });
+
+  });
+
+
+/* =========================================================
+   SEARCH
+   ========================================================= */
+
+searchInput.addEventListener(
+  "input",
+  renderMenu
+);
+
+
+/* INITIAL MENU */
+
+renderMenu();
+
+</script>
 
 </body>
 </html>
