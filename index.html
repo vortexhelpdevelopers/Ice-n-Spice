@@ -1,0 +1,1659 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Ice n Spice | North Nazimabad Karachi</title>
+  <meta name="description" content="Ice n Spice — Fast Food, Chinese, Burgers, BBQ and more in North Nazimabad, Karachi.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #080808;
+      --bg2: #101010;
+      --card: #151515;
+      --card2: #1b1b1b;
+      --text: #ffffff;
+      --muted: #a7a7a7;
+      --accent: #f4b400;
+      --accent2: #ffcc45;
+      --border: rgba(255,255,255,0.09);
+      --green: #25d366;
+      --max: 1180px;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: "DM Sans", sans-serif;
+      overflow-x: hidden;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      width: 100%;
+      display: block;
+    }
+
+    .container {
+      width: min(92%, var(--max));
+      margin: auto;
+    }
+
+    /* ================= HEADER ================= */
+
+    header {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      z-index: 1000;
+      background: rgba(8,8,8,0.88);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 25px;
+    }
+
+    .logo {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .logo-mark {
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      display: grid;
+      place-items: center;
+      background: linear-gradient(135deg, #f4b400, #ff7a00);
+      color: #111;
+      font-size: 22px;
+      font-weight: 800;
+      box-shadow: 0 8px 30px rgba(244,180,0,.2);
+    }
+
+    .logo-text {
+      line-height: 1;
+    }
+
+    .logo-text strong {
+      display: block;
+      font-family: "Playfair Display", serif;
+      font-size: 20px;
+    }
+
+    .logo-text span {
+      display: block;
+      margin-top: 5px;
+      color: var(--muted);
+      font-size: 10px;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    nav {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+    }
+
+    nav a {
+      color: #ddd;
+      font-size: 14px;
+      transition: .25s;
+    }
+
+    nav a:hover {
+      color: var(--accent);
+    }
+
+    .nav-btn {
+      padding: 12px 18px;
+      border-radius: 100px;
+      background: var(--accent);
+      color: #111;
+      font-weight: 800;
+      font-size: 13px;
+    }
+
+    /* ================= HERO ================= */
+
+    .hero {
+      min-height: 780px;
+      position: relative;
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+      background:
+        linear-gradient(90deg, rgba(0,0,0,.95) 0%, rgba(0,0,0,.75) 45%, rgba(0,0,0,.35) 100%),
+        url("https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?auto=format&fit=crop&w=1800&q=85")
+        center/cover no-repeat;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: auto 0 0;
+      height: 180px;
+      background: linear-gradient(transparent, var(--bg));
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      padding-top: 80px;
+      max-width: 720px;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: 11px;
+      font-weight: 800;
+      margin-bottom: 22px;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 34px;
+      height: 2px;
+      background: var(--accent);
+    }
+
+    h1 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(52px, 8vw, 92px);
+      line-height: .95;
+      letter-spacing: -3px;
+    }
+
+    h1 span {
+      color: var(--accent);
+    }
+
+    .hero-description {
+      margin-top: 28px;
+      max-width: 580px;
+      color: #d1d1d1;
+      font-size: 17px;
+      line-height: 1.8;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 13px;
+      margin-top: 32px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      padding: 15px 23px;
+      border-radius: 100px;
+      font-weight: 800;
+      font-size: 14px;
+      transition: .25s;
+    }
+
+    .btn-primary {
+      background: var(--accent);
+      color: #111;
+      box-shadow: 0 12px 35px rgba(244,180,0,.18);
+    }
+
+    .btn-primary:hover {
+      transform: translateY(-3px);
+      background: var(--accent2);
+    }
+
+    .btn-outline {
+      border: 1px solid rgba(255,255,255,.2);
+      background: rgba(255,255,255,.05);
+      backdrop-filter: blur(10px);
+    }
+
+    .btn-outline:hover {
+      border-color: var(--accent);
+      color: var(--accent);
+    }
+
+    /* ================= QUICK INFO ================= */
+
+    .quick-info {
+      position: relative;
+      z-index: 5;
+      margin-top: -72px;
+    }
+
+    .info-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      overflow: hidden;
+      background: rgba(20,20,20,.94);
+      backdrop-filter: blur(20px);
+      box-shadow: 0 20px 70px rgba(0,0,0,.35);
+    }
+
+    .info-box {
+      padding: 28px;
+      display: flex;
+      align-items: center;
+      gap: 17px;
+      border-right: 1px solid var(--border);
+    }
+
+    .info-box:last-child {
+      border-right: 0;
+    }
+
+    .info-icon {
+      min-width: 48px;
+      height: 48px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      background: rgba(244,180,0,.1);
+      border: 1px solid rgba(244,180,0,.2);
+      font-size: 21px;
+    }
+
+    .info-box small {
+      display: block;
+      color: #858585;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      margin-bottom: 5px;
+    }
+
+    .info-box strong {
+      font-size: 14px;
+    }
+
+    /* ================= SECTIONS ================= */
+
+    section {
+      padding: 110px 0;
+    }
+
+    .section-head {
+      max-width: 700px;
+      margin-bottom: 50px;
+    }
+
+    .section-label {
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: 11px;
+      font-weight: 800;
+      margin-bottom: 12px;
+    }
+
+    .section-title {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(38px, 5vw, 58px);
+      line-height: 1.05;
+    }
+
+    .section-description {
+      color: var(--muted);
+      line-height: 1.8;
+      margin-top: 17px;
+    }
+
+    /* ================= ABOUT ================= */
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 65px;
+      align-items: center;
+    }
+
+    .about-image {
+      min-height: 550px;
+      border-radius: 28px;
+      overflow: hidden;
+      position: relative;
+      background:
+        linear-gradient(180deg, transparent 40%, rgba(0,0,0,.8)),
+        url("https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=1100&q=85")
+        center/cover;
+    }
+
+    .about-badge {
+      position: absolute;
+      bottom: 25px;
+      left: 25px;
+      right: 25px;
+      padding: 20px;
+      border-radius: 18px;
+      background: rgba(10,10,10,.82);
+      border: 1px solid rgba(255,255,255,.12);
+      backdrop-filter: blur(15px);
+    }
+
+    .about-badge strong {
+      font-family: "Playfair Display", serif;
+      font-size: 23px;
+    }
+
+    .about-badge p {
+      color: #aaa;
+      font-size: 13px;
+      margin-top: 5px;
+    }
+
+    .about-copy p {
+      color: #aaa;
+      line-height: 1.9;
+      margin-bottom: 20px;
+    }
+
+    .feature-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+      margin-top: 28px;
+    }
+
+    .feature {
+      padding: 17px;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 15px;
+    }
+
+    .feature strong {
+      display: block;
+      font-size: 14px;
+    }
+
+    .feature span {
+      color: #858585;
+      font-size: 12px;
+      display: block;
+      margin-top: 5px;
+    }
+
+    /* ================= MENU ================= */
+
+    .menu-section {
+      background: #0c0c0c;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .menu-tabs {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 32px;
+    }
+
+    .menu-tab {
+      padding: 11px 18px;
+      border: 1px solid var(--border);
+      border-radius: 100px;
+      color: #aaa;
+      font-size: 13px;
+    }
+
+    .menu-tab.active {
+      background: var(--accent);
+      color: #111;
+      border-color: var(--accent);
+      font-weight: 800;
+    }
+
+    .menu-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .menu-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 20px;
+      overflow: hidden;
+      transition: .3s;
+    }
+
+    .menu-card:hover {
+      transform: translateY(-7px);
+      border-color: rgba(244,180,0,.4);
+      box-shadow: 0 20px 45px rgba(0,0,0,.3);
+    }
+
+    .menu-image {
+      height: 210px;
+      overflow: hidden;
+    }
+
+    .menu-image img {
+      height: 100%;
+      object-fit: cover;
+      transition: .5s;
+    }
+
+    .menu-card:hover .menu-image img {
+      transform: scale(1.06);
+    }
+
+    .menu-content {
+      padding: 21px;
+    }
+
+    .menu-tag {
+      color: var(--accent);
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      font-size: 9px;
+      font-weight: 800;
+    }
+
+    .menu-content h3 {
+      font-family: "Playfair Display", serif;
+      font-size: 23px;
+      margin-top: 7px;
+    }
+
+    .menu-content p {
+      color: #858585;
+      line-height: 1.6;
+      font-size: 12px;
+      margin-top: 8px;
+      min-height: 39px;
+    }
+
+    .menu-bottom {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 17px;
+      padding-top: 15px;
+      border-top: 1px solid var(--border);
+    }
+
+    .price {
+      color: var(--accent);
+      font-weight: 800;
+      font-size: 15px;
+    }
+
+    .order-mini {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: var(--accent);
+      color: #111;
+      font-weight: 900;
+    }
+
+    /* ================= FEATURE BANNER ================= */
+
+    .feature-banner {
+      padding: 0 0 110px;
+    }
+
+    .banner {
+      min-height: 350px;
+      border-radius: 28px;
+      padding: 55px;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      background:
+        linear-gradient(90deg, rgba(0,0,0,.94), rgba(0,0,0,.55)),
+        url("https://images.unsplash.com/photo-1563379926898-05f4575a45d8?auto=format&fit=crop&w=1600&q=85")
+        center/cover;
+      border: 1px solid var(--border);
+    }
+
+    .banner-content {
+      max-width: 600px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .banner h2 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(36px, 5vw, 57px);
+      line-height: 1.05;
+    }
+
+    .banner p {
+      color: #ccc;
+      margin-top: 15px;
+      line-height: 1.7;
+    }
+
+    /* ================= SPECIALS ================= */
+
+    .special-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .special-card {
+      padding: 30px;
+      min-height: 250px;
+      border-radius: 22px;
+      background: linear-gradient(145deg, #191919, #101010);
+      border: 1px solid var(--border);
+      position: relative;
+      overflow: hidden;
+    }
+
+    .special-card::before {
+      content: "";
+      position: absolute;
+      width: 150px;
+      height: 150px;
+      border-radius: 50%;
+      background: rgba(244,180,0,.08);
+      top: -60px;
+      right: -60px;
+    }
+
+    .special-number {
+      color: var(--accent);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 2px;
+    }
+
+    .special-card h3 {
+      font-family: "Playfair Display", serif;
+      font-size: 28px;
+      margin-top: 17px;
+    }
+
+    .special-card p {
+      color: #858585;
+      line-height: 1.7;
+      margin-top: 12px;
+      font-size: 13px;
+    }
+
+    /* ================= LOCATION ================= */
+
+    .location {
+      background: #0c0c0c;
+      border-top: 1px solid var(--border);
+    }
+
+    .location-grid {
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 25px;
+    }
+
+    .contact-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      padding: 35px;
+    }
+
+    .contact-item {
+      padding: 20px 0;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .contact-item:last-child {
+      border-bottom: 0;
+    }
+
+    .contact-item small {
+      display: block;
+      color: #777;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+      font-size: 10px;
+      margin-bottom: 8px;
+    }
+
+    .contact-item strong {
+      font-size: 15px;
+      line-height: 1.6;
+    }
+
+    .map-box {
+      min-height: 430px;
+      border-radius: 24px;
+      border: 1px solid var(--border);
+      overflow: hidden;
+      background:
+        linear-gradient(rgba(0,0,0,.25), rgba(0,0,0,.45)),
+        url("https://images.unsplash.com/photo-1523731407965-2430cd12f5e4?auto=format&fit=crop&w=1300&q=85")
+        center/cover;
+      display: flex;
+      align-items: flex-end;
+      padding: 25px;
+    }
+
+    .map-overlay {
+      width: 100%;
+      padding: 22px;
+      border-radius: 18px;
+      background: rgba(8,8,8,.85);
+      backdrop-filter: blur(15px);
+      border: 1px solid rgba(255,255,255,.1);
+    }
+
+    .map-overlay strong {
+      display: block;
+      font-family: "Playfair Display", serif;
+      font-size: 22px;
+    }
+
+    .map-overlay span {
+      display: block;
+      color: #999;
+      font-size: 12px;
+      margin-top: 5px;
+    }
+
+    /* ================= CTA ================= */
+
+    .cta {
+      text-align: center;
+      padding: 120px 0;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .cta::before {
+      content: "";
+      position: absolute;
+      width: 500px;
+      height: 500px;
+      border-radius: 50%;
+      background: rgba(244,180,0,.07);
+      filter: blur(20px);
+      left: 50%;
+      top: 20%;
+      transform: translateX(-50%);
+    }
+
+    .cta-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .cta h2 {
+      font-family: "Playfair Display", serif;
+      font-size: clamp(42px, 6vw, 68px);
+      line-height: 1;
+    }
+
+    .cta p {
+      color: #999;
+      max-width: 550px;
+      margin: 20px auto 30px;
+      line-height: 1.8;
+    }
+
+    /* ================= FOOTER ================= */
+
+    footer {
+      padding: 35px 0;
+      border-top: 1px solid var(--border);
+      background: #060606;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .footer-copy {
+      color: #666;
+      font-size: 12px;
+    }
+
+    .footer-brand {
+      font-family: "Playfair Display", serif;
+      font-size: 18px;
+    }
+
+    /* ================= FLOATING WHATSAPP ================= */
+
+    .whatsapp {
+      position: fixed;
+      right: 22px;
+      bottom: 22px;
+      z-index: 2000;
+      width: 58px;
+      height: 58px;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      background: var(--green);
+      color: #fff;
+      font-size: 26px;
+      box-shadow: 0 10px 35px rgba(37,211,102,.28);
+      transition: .25s;
+    }
+
+    .whatsapp:hover {
+      transform: scale(1.08);
+    }
+
+    /* ================= RESPONSIVE ================= */
+
+    @media (max-width: 900px) {
+
+      nav {
+        display: none;
+      }
+
+      .hero {
+        min-height: 700px;
+      }
+
+      .info-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .info-box {
+        border-right: 0;
+        border-bottom: 1px solid var(--border);
+      }
+
+      .info-box:last-child {
+        border-bottom: 0;
+      }
+
+      .about-grid,
+      .location-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .about-image {
+        min-height: 430px;
+      }
+
+      .menu-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .special-grid {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 600px) {
+
+      .nav {
+        min-height: 68px;
+      }
+
+      .logo-mark {
+        width: 38px;
+        height: 38px;
+      }
+
+      .logo-text strong {
+        font-size: 17px;
+      }
+
+      .hero {
+        min-height: 670px;
+        background-position: 65% center;
+      }
+
+      .hero-content {
+        padding-top: 70px;
+      }
+
+      h1 {
+        font-size: 54px;
+        letter-spacing: -2px;
+      }
+
+      .hero-description {
+        font-size: 14px;
+        line-height: 1.7;
+      }
+
+      .hero-buttons {
+        flex-direction: column;
+      }
+
+      .btn {
+        width: 100%;
+      }
+
+      section {
+        padding: 80px 0;
+      }
+
+      .quick-info {
+        margin-top: -45px;
+      }
+
+      .info-box {
+        padding: 20px;
+      }
+
+      .about-image {
+        min-height: 350px;
+      }
+
+      .feature-list {
+        grid-template-columns: 1fr;
+      }
+
+      .menu-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .menu-image {
+        height: 230px;
+      }
+
+      .banner {
+        padding: 35px 25px;
+        min-height: 400px;
+      }
+
+      .location-grid {
+        gap: 18px;
+      }
+
+      .contact-card {
+        padding: 25px;
+      }
+
+      .map-box {
+        min-height: 350px;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- ================= HEADER ================= -->
+
+  <header>
+    <div class="container nav">
+
+      <a href="#home" class="logo">
+        <div class="logo-mark">I</div>
+
+        <div class="logo-text">
+          <strong>Ice n Spice</strong>
+          <span>Restaurant · Karachi</span>
+        </div>
+      </a>
+
+      <nav>
+        <a href="#home">Home</a>
+        <a href="#about">About</a>
+        <a href="#menu">Menu</a>
+        <a href="#specials">Specials</a>
+        <a href="#location">Location</a>
+      </nav>
+
+      <a class="nav-btn" href="https://wa.me/923216638470?text=Hello%20Ice%20n%20Spice%2C%20I%20would%20like%20to%20place%20an%20order." target="_blank">
+        Order Now
+      </a>
+
+    </div>
+  </header>
+
+
+  <!-- ================= HERO ================= -->
+
+  <main id="home">
+
+    <section class="hero">
+
+      <div class="container">
+
+        <div class="hero-content">
+
+          <div class="eyebrow">
+            North Nazimabad · Karachi
+          </div>
+
+          <h1>
+            Taste That<br>
+            <span>Brings You Back.</span>
+          </h1>
+
+          <p class="hero-description">
+            From signature burgers and crispy broast to Chinese favourites,
+            BBQ, rolls and more — discover a menu made for every craving.
+          </p>
+
+          <div class="hero-buttons">
+
+            <a class="btn btn-primary"
+               href="https://wa.me/923216638470?text=Hello%20Ice%20n%20Spice%2C%20I%20would%20like%20to%20place%20an%20order."
+               target="_blank">
+              💬 Order on WhatsApp
+            </a>
+
+            <a class="btn btn-outline" href="#menu">
+              Explore Menu ↓
+            </a>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ================= QUICK INFO ================= -->
+
+    <div class="container quick-info">
+
+      <div class="info-grid">
+
+        <div class="info-box">
+          <div class="info-icon">📍</div>
+
+          <div>
+            <small>Visit Us</small>
+            <strong>Block A, North Nazimabad</strong>
+          </div>
+        </div>
+
+        <div class="info-box">
+          <div class="info-icon">📞</div>
+
+          <div>
+            <small>Call / WhatsApp</small>
+            <strong>0321 6638470</strong>
+          </div>
+        </div>
+
+        <div class="info-box">
+          <div class="info-icon">🍽️</div>
+
+          <div>
+            <small>Available</small>
+            <strong>Dine-in · Takeaway · Delivery</strong>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+
+    <!-- ================= ABOUT ================= -->
+
+    <section id="about">
+
+      <div class="container">
+
+        <div class="about-grid">
+
+          <div class="about-image">
+
+            <div class="about-badge">
+              <strong>Made for Every Craving</strong>
+              <p>Fast food · Chinese · BBQ · Burgers & more</p>
+            </div>
+
+          </div>
+
+          <div class="about-copy">
+
+            <div class="section-label">About Ice n Spice</div>
+
+            <h2 class="section-title">
+              A Menu Full of Flavour.
+            </h2>
+
+            <p>
+              Ice n Spice brings together a wide selection of popular
+              fast-food and restaurant favourites in North Nazimabad,
+              Karachi.
+            </p>
+
+            <p>
+              Whether you're craving a loaded burger, crispy broast,
+              Chinese food, BBQ or a refreshing dessert, there's something
+              for every kind of appetite.
+            </p>
+
+            <div class="feature-list">
+
+              <div class="feature">
+                <strong>🍔 Burgers</strong>
+                <span>Classic & signature options</span>
+              </div>
+
+              <div class="feature">
+                <strong>🍗 Broast</strong>
+                <span>Crispy & flavourful</span>
+              </div>
+
+              <div class="feature">
+                <strong>🥢 Chinese</strong>
+                <span>Noodles, soups & more</span>
+              </div>
+
+              <div class="feature">
+                <strong>🔥 BBQ</strong>
+                <span>Grilled favourites</span>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ================= MENU ================= -->
+
+    <section class="menu-section" id="menu">
+
+      <div class="container">
+
+        <div class="section-head">
+
+          <div class="section-label">Explore Our Menu</div>
+
+          <h2 class="section-title">
+            Something for Every Craving.
+          </h2>
+
+          <p class="section-description">
+            Explore some of the popular categories and dishes associated
+            with Ice n Spice. Ask the restaurant for the latest menu and
+            prices before ordering.
+          </p>
+
+        </div>
+
+
+        <div class="menu-tabs">
+
+          <div class="menu-tab active">Popular</div>
+          <div class="menu-tab">Burgers</div>
+          <div class="menu-tab">Chinese</div>
+          <div class="menu-tab">BBQ</div>
+          <div class="menu-tab">Broast</div>
+          <div class="menu-tab">Drinks</div>
+
+        </div>
+
+
+        <div class="menu-grid">
+
+
+          <!-- CARD 1 -->
+
+          <article class="menu-card">
+
+            <div class="menu-image">
+              <img
+                src="https://images.unsplash.com/photo-1568901346375-23c9450c58cd?auto=format&fit=crop&w=900&q=85"
+                alt="Burger">
+            </div>
+
+            <div class="menu-content">
+
+              <span class="menu-tag">Signature</span>
+
+              <h3>Zinger Deluxe</h3>
+
+              <p>
+                One of the popular burger choices associated with
+                Ice n Spice.
+              </p>
+
+              <div class="menu-bottom">
+                <span class="price">Ask for price</span>
+
+                <a class="order-mini"
+                   href="https://wa.me/923216638470?text=Hi%2C%20I%27d%20like%20to%20order%20the%20Zinger%20Deluxe."
+                   target="_blank">+</a>
+              </div>
+
+            </div>
+
+          </article>
+
+
+          <!-- CARD 2 -->
+
+          <article class="menu-card">
+
+            <div class="menu-image">
+              <img
+                src="https://images.unsplash.com/photo-1572802419224-296b0aeee0d9?auto=format&fit=crop&w=900&q=85"
+                alt="Burger">
+            </div>
+
+            <div class="menu-content">
+
+              <span class="menu-tag">Special</span>
+
+              <h3>Accident Burger</h3>
+
+              <p>
+                A beef and chicken combination featured among the
+                restaurant's popular items.
+              </p>
+
+              <div class="menu-bottom">
+                <span class="price">From Rs. 350*</span>
+
+                <a class="order-mini"
+                   href="https://wa.me/923216638470?text=Hi%2C%20I%27d%20like%20to%20order%20the%20Accident%20Burger."
+                   target="_blank">+</a>
+              </div>
+
+            </div>
+
+          </article>
+
+
+          <!-- CARD 3 -->
+
+          <article class="menu-card">
+
+            <div class="menu-image">
+              <img
+                src="https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=900&q=85"
+                alt="Broast">
+            </div>
+
+            <div class="menu-content">
+
+              <span class="menu-tag">Crispy</span>
+
+              <h3>Chicken Broast</h3>
+
+              <p>
+                Crispy fried chicken served as one of the restaurant's
+                well-known fast-food choices.
+              </p>
+
+              <div class="menu-bottom">
+                <span class="price">Ask for price</span>
+
+                <a class="order-mini"
+                   href="https://wa.me/923216638470?text=Hi%2C%20I%27d%20like%20to%20order%20Chicken%20Broast."
+                   target="_blank">+</a>
+              </div>
+
+            </div>
+
+          </article>
+
+
+          <!-- CARD 4 -->
+
+          <article class="menu-card">
+
+            <div class="menu-image">
+              <img
+                src="https://images.unsplash.com/photo-1552611052-33e04de081de?auto=format&fit=crop&w=900&q=85"
+                alt="Chinese noodles">
+            </div>
+
+            <div class="menu-content">
+
+              <span class="menu-tag">Chinese</span>
+
+              <h3>Chinese Favourites</h3>
+
+              <p>
+                Enjoy Chinese-style favourites including noodles,
+                soups and other popular dishes.
+              </p>
+
+              <div class="menu-bottom">
+                <span class="price">View options</span>
+
+                <a class="order-mini"
+                   href="https://wa.me/923216638470?text=Hi%2C%20please%20share%20your%20Chinese%20menu."
+                   target="_blank">+</a>
+              </div>
+
+            </div>
+
+          </article>
+
+
+          <!-- CARD 5 -->
+
+          <article class="menu-card">
+
+            <div class="menu-image">
+              <img
+                src="https://images.unsplash.com/photo-1555939594-58d7cb561ad1?auto=format&fit=crop&w=900&q=85"
+                alt="BBQ">
+            </div>
+
+            <div class="menu-content">
+
+              <span class="menu-tag">Grill</span>
+
+              <h3>BBQ Selection</h3>
+
+              <p>
+                A selection of grilled and BBQ favourites for meat
+                lovers and family meals.
+              </p>
+
+              <div class="menu-bottom">
+                <span class="price">Ask for price</span>
+
+                <a class="order-mini"
+                   href="https://wa.me/923216638470?text=Hi%2C%20please%20share%20your%20BBQ%20menu."
+                   target="_blank">+</a>
+              </div>
+
+            </div>
+
+          </article>
+
+
+          <!-- CARD 6 -->
+
+          <article class="menu-card">
+
+            <div class="menu-image">
+              <img
+                src="https://images.unsplash.com/photo-1601050690117-94f5f6fa8bd7?auto=format&fit=crop&w=900&q=85"
+                alt="Wrap">
+            </div>
+
+            <div class="menu-content">
+
+              <span class="menu-tag">Quick Bite</span>
+
+              <h3>Wraps & Rolls</h3>
+
+              <p>
+                Convenient, flavour-packed options for a quick meal
+                or evening craving.
+              </p>
+
+              <div class="menu-bottom">
+                <span class="price">Ask for price</span>
+
+                <a class="order-mini"
+                   href="https://wa.me/923216638470?text=Hi%2C%20please%20share%20your%20Wraps%20and%20Rolls%20menu."
+                   target="_blank">+</a>
+              </div>
+
+            </div>
+
+          </article>
+
+
+        </div>
+
+        <p style="color:#666;font-size:11px;margin-top:20px;">
+          * Price shown for the Accident Burger is based on a publicly listed
+          menu/deal reference and may change. Please confirm current prices
+          directly with Ice n Spice.
+        </p>
+
+      </div>
+
+    </section>
+
+
+    <!-- ================= FEATURE BANNER ================= -->
+
+    <section class="feature-banner">
+
+      <div class="container">
+
+        <div class="banner">
+
+          <div class="banner-content">
+
+            <div class="section-label">
+              Your Next Craving
+            </div>
+
+            <h2>
+              Good Food.<br>
+              Good Mood.
+            </h2>
+
+            <p>
+              Choose your favourite, send your order on WhatsApp,
+              and enjoy your meal.
+            </p>
+
+            <div style="margin-top:25px;">
+
+              <a class="btn btn-primary"
+                 href="https://wa.me/923216638470?text=Hello%20Ice%20n%20Spice%2C%20please%20share%20your%20latest%20menu."
+                 target="_blank">
+                Get Latest Menu
+              </a>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ================= SPECIALS ================= -->
+
+    <section id="specials">
+
+      <div class="container">
+
+        <div class="section-head">
+
+          <div class="section-label">
+            Why People Come Back
+          </div>
+
+          <h2 class="section-title">
+            Built Around Variety.
+          </h2>
+
+          <p class="section-description">
+            A broad selection means everyone at the table can find
+            something they enjoy.
+          </p>
+
+        </div>
+
+
+        <div class="special-grid">
+
+          <div class="special-card">
+
+            <span class="special-number">01 · BURGERS</span>
+
+            <h3>Big Burger Cravings</h3>
+
+            <p>
+              From Zinger Deluxe to the distinctive Accident Burger,
+              discover the burger side of Ice n Spice.
+            </p>
+
+          </div>
+
+
+          <div class="special-card">
+
+            <span class="special-number">02 · CHINESE</span>
+
+            <h3>Chinese Favourites</h3>
+
+            <p>
+              Noodles, soups and Chinese-inspired favourites make
+              the menu more than just fast food.
+            </p>
+
+          </div>
+
+
+          <div class="special-card">
+
+            <span class="special-number">03 · FAMILY</span>
+
+            <h3>Something for Everyone</h3>
+
+            <p>
+              Fast food, BBQ, broast, rolls and more give families
+              and groups plenty of options.
+            </p>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ================= LOCATION ================= -->
+
+    <section class="location" id="location">
+
+      <div class="container">
+
+        <div class="section-head">
+
+          <div class="section-label">Find Us</div>
+
+          <h2 class="section-title">
+            Visit Ice n Spice.
+          </h2>
+
+          <p class="section-description">
+            Located in Block A, North Nazimabad, Karachi.
+          </p>
+
+        </div>
+
+
+        <div class="location-grid">
+
+
+          <div class="contact-card">
+
+            <div class="contact-item">
+
+              <small>Address</small>
+
+              <strong>
+                Shop #2, SDII<br>
+                Block A, North Nazimabad<br>
+                Karachi, Pakistan
+              </strong>
+
+            </div>
+
+
+            <div class="contact-item">
+
+              <small>Phone / WhatsApp</small>
+
+              <strong>
+                +92 321 6638470
+              </strong>
+
+            </div>
+
+
+            <div class="contact-item">
+
+              <small>Dining Options</small>
+
+              <strong>
+                Dine-in · Takeaway · Delivery
+              </strong>
+
+            </div>
+
+
+            <div style="margin-top:25px;">
+
+              <a class="btn btn-primary"
+                 href="https://wa.me/923216638470?text=Hello%20Ice%20n%20Spice%2C%20I%20would%20like%20to%20place%20an%20order."
+                 target="_blank">
+                💬 WhatsApp Us
+              </a>
+
+            </div>
+
+          </div>
+
+
+          <div class="map-box">
+
+            <div class="map-overlay">
+
+              <strong>North Nazimabad, Karachi</strong>
+
+              <span>
+                Block A · Ice n Spice
+              </span>
+
+              <div style="margin-top:15px;">
+
+                <a class="btn btn-primary"
+                   href="https://www.google.com/maps/search/?api=1&query=Ice%20n%20Spice%20Block%20A%20North%20Nazimabad%20Karachi"
+                   target="_blank">
+                  📍 Open in Google Maps
+                </a>
+
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </div>
+
+    </section>
+
+
+    <!-- ================= CTA ================= -->
+
+    <section class="cta">
+
+      <div class="container">
+
+        <div class="cta-content">
+
+          <div class="section-label">
+            Ready to Order?
+          </div>
+
+          <h2>
+            Your Craving<br>
+            Starts Here.
+          </h2>
+
+          <p>
+            Contact Ice n Spice directly for the latest menu,
+            prices, availability and order details.
+          </p>
+
+          <a class="btn btn-primary"
+             href="https://wa.me/923216638470?text=Hello%20Ice%20n%20Spice%2C%20I%20would%20like%20to%20place%20an%20order."
+             target="_blank">
+            💬 Order on WhatsApp
+          </a>
+
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+
+  <!-- ================= FOOTER ================= -->
+
+  <footer>
+
+    <div class="container footer-inner">
+
+      <div class="footer-brand">
+        Ice n Spice
+      </div>
+
+      <div class="footer-copy">
+        © 2026 Ice n Spice · North Nazimabad, Karachi
+      </div>
+
+      <div class="footer-copy">
+        Fast Food · Chinese · BBQ · Burgers
+      </div>
+
+    </div>
+
+  </footer>
+
+
+  <!-- ================= FLOATING WHATSAPP ================= -->
+
+  <a
+    class="whatsapp"
+    href="https://wa.me/923216638470?text=Hello%20Ice%20n%20Spice%2C%20I%20would%20like%20to%20place%20an%20order."
+    target="_blank"
+    aria-label="WhatsApp">
+    ☎
+  </a>
+
+</body>
+</html>
